@@ -19,7 +19,7 @@ def yt(vid, title, extra=''):
     return (f'<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{vid}{extra}" title="{esc(title)}" loading="lazy" '
             'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
 
-def sec(num, sid, dot, kicker, title, body, lede=None):
+def sec(num, sid, dot, kicker, title, body='', lede=None):
     l = f'<p class="lede">{lede}</p>' if lede else ''
     return (f'<section id="{sid}" class="sec"><div class="wrap"><span class="num" aria-hidden="true">{num}</span>'
             f'<p class="kicker"><i class="dot {dot}"></i>{num} · {kicker}</p><h2>{title}</h2>{l}</div>\n{body}\n</section>\n')
@@ -88,7 +88,7 @@ hero = f'''<header class="hero">
 <div class="hero-in wrap">
 <p class="kicker"><i class="dot t"></i><i class="dot a"></i><i class="dot v"></i><i class="dot w"></i>Prijedlog za ERF Zagreb</p>
 <h1>Jedna soba, četiri namjene</h1>
-<p class="lede">Soba u kojoj su četiri zida slika, a strop zvuk. Ujutro je terapijska soba pod morem, poslije laboratorij za analizu pokreta, a kad miruje, AI laboratorij u kojem se glasom stvara bilo što. Sve visi sa stropa, na podu su samo ljudi.</p>
+<p class="lede">Soba u kojoj su četiri zida slika, a strop zvuk. Ujutro je terapijska soba pod morem, poslije laboratorij za analizu pokreta, a kad miruje, AI laboratorij u kojem glasom nastaje ono što opišeš. Sve visi sa stropa, na podu su samo ljudi.</p>
 <nav class="chips" aria-label="Četiri namjene"><a href="#terapija"><i class="dot t"></i>Terapija</a><a href="#pokret"><i class="dot a"></i>Analiza pokreta</a><a href="#ai-lab"><i class="dot v"></i>AI laboratorij</a><a href="#erf"><i class="dot w"></i>Istraživanje</a></nav>
 <p class="ded">Za prof. dr. sc. <a href="https://www.erf.unizg.hr/djelatnici/renata.martinec" rel="noopener">Renatu Martinec</a> i asistenticu <a href="https://www.erf.unizg.hr/djelatnici/brigita.vilc" rel="noopener">Brigitu Vilč</a>, Odsjek za motoričke poremećaje, kronične bolesti i art terapije, <a href="https://www.erf.unizg.hr" rel="noopener">Edukacijsko-rehabilitacijski fakultet</a>.</p>
 </div></header>
@@ -103,8 +103,8 @@ s1 = sec('01','terapija','t','Terapija','Soba pod morem', f'''
 {fig('movement','Dijete na sredini sobe diže ruke, a na zidu svjetleći lik od točaka i linija ponavlja pokret dok oko njega plivaju ribe i kornjača','Pogođen pokret: ribe i kornjača doplivaju kao nagrada.','pic wide')}
 <p>Moja aplikacija Skeleton na sliku osobe stavlja kostur od točaka i linija. Terapeut odabere pokret, aplikacija ga pokaže kao prozirnu siluetu, a kad ga osoba pogodi i zadrži, dolazi nagrada u slici i zvuku. Težinu određuje terapeut, od vrlo blage do točnije.</p>
 <div class="duo">
-<div class="card">{fig('relax','Dijete leži na mekanoj vreći usred tamnoplave sobe s meduzama, terapeutkinja sjedi uz njega')}<h4>Opuštanje</h4><p>Spori, mali pokreti: ruke se dižu s udahom. Tamna voda i meduze. Nagrada je nježna: kit zapjeva iz kuta sobe.</p></div>
-<div class="card">{fig('activation','Djeca dodiruju svjetleće krugove na zidu i iz njih izlaze jata riba')}<h4>Aktivacija</h4><p>Veći pokreti: ruke u zvijezdu, dohvati krug svjetla. Svijetao greben. Nagrada je vesela: jato riba proleti cijelom sobom.</p></div>
+<div class="card">{fig('relax','Dijete leži na mekanoj vreći usred tamnoplave sobe s meduzama, terapeutkinja sjedi uz njega')}<h3 class="h4">Opuštanje</h3><p>Spori, mali pokreti: ruke se dižu s udahom. Tamna voda i meduze. Nagrada je nježna: kit zapjeva iz kuta sobe.</p></div>
+<div class="card">{fig('activation','Djeca dodiruju svjetleće krugove na zidu i iz njih izlaze jata riba')}<h3 class="h4">Aktivacija</h3><p>Veći pokreti: ruke u zvijezdu, dohvati krug svjetla. Svijetao greben. Nagrada je vesela: jato riba proleti cijelom sobom.</p></div>
 </div>
 <h3>Pjevaj i dobij svoju pjesmu</h3>
 <div class="split">{fig('singing','Mladić u invalidskim kolicima sretno pjeva prema malom kuglastom mikrofonu sa stropa, terapeutkinja drži tablet')}<div><p>Osoba otpjeva nekoliko taktova u mikrofon, terapeut pritisne gumb, i za minutu iz svih zvučnika dođe cijela pjesma nastala iz te melodije. To radi <a href="https://suno.com" rel="noopener">Suno</a>: besplatni račun daje oko deset pjesama dnevno za osobnu upotrebu. Da pjesmu pjeva baš glas te osobe, treba plaćeni paket i osoba svoj glas mora sama potvrditi. Za djecu uz pristanak roditelja.</p></div></div>
@@ -126,10 +126,10 @@ s2 = sec('02','pokret','a','Analiza pokreta','Laboratorij pokreta: hod prije i p
 {fig('gait','Na zidu dva prozirna lika od točaka i linija u hodu, jedan nesimetričan, drugi uravnoteženiji; terapeutkinja pokazuje, studentica drži tablet','Isti hod prije i poslije terapije, jedan pored drugog.','pic wide')}
 <p>Isti hod snimimo prije i poslije terapije i usporedimo ga na zidu: duljinu koraka, simetriju, ritam, držanje i opseg pokreta u zglobovima. Brojke ne zamjenjuju procjenu terapeuta; daju joj trag koji se može pratiti kroz mjesece.</p>
 <div class="uses">
-<div class="card"><h4>Hod</h4><p>Duljina i ritam koraka, simetrija lijeve i desne strane, prije i poslije terapije.</p></div>
-<div class="card"><h4>Opseg pokreta</h4><p>Koliko se ruka diže, koljeno savija ili trup okreće, iz sesije u sesiju.</p></div>
-<div class="card"><h4>Ravnoteža</h4><p>Njihanje tijela u stajanju i pri prijelazima, uz igru na zidu kao motivaciju.</p></div>
-<div class="card"><h4>Usporena snimka</h4><p>Iz dvanaest kamera može se napraviti i "bullet time": pokret zamrznut i obiđen sa svih strana, za nastavu i za samu osobu.</p></div>
+<div class="card"><h3 class="h4">Hod</h3><p>Duljina i ritam koraka, simetrija lijeve i desne strane, prije i poslije terapije.</p></div>
+<div class="card"><h3 class="h4">Opseg pokreta</h3><p>Koliko se ruka diže, koljeno savija ili trup okreće, iz sesije u sesiju.</p></div>
+<div class="card"><h3 class="h4">Ravnoteža</h3><p>Njihanje tijela u stajanju i pri prijelazima, uz igru na zidu kao motivaciju.</p></div>
+<div class="card"><h3 class="h4">Usporena snimka</h3><p>Iz dvanaest kamera može se napraviti i "bullet time": pokret zamrznut i obiđen sa svih strana, za nastavu i za samu osobu.</p></div>
 </div>
 <p class="note">Za 3D zglobove iz više kamera postoji otvoreni alat <a href="https://pypi.org/project/pose2sim/" rel="noopener">Pose2Sim</a>. Istraživanja s takvim sustavima (npr. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10586693/" rel="noopener">OpenCap, 2023.</a>) pokazuju dobru točnost za ritam koraka i kutove u bočnoj ravnini, a slabiju za rotacije i stopalo, pa je laboratorij alat za praćenje i istraživanje, a ne dijagnostika. Snimke ostaju na računalu u sobi, uz pisani pristanak.</p>
 </div>''', lede='Isti prostor postaje laboratorij za analizu ljudskog pokreta, bez markera i odijela: dovoljno je ući u krug.')
@@ -138,7 +138,6 @@ APPS_DONE = [
  ('Blender Control','AI na Mac miniju uređuje otvorenu scenu u Blenderu, radi snimke ekrana i renderira animacije.'),
  ('DaVinci Resolve Actions','gumbi i skripte za korekciju boje, izradu timelinea i izvoz u DaVinci Resolveu.'),
  ('Ableton Live Actions','spaja miksetu s Abletonom i sam priprema set kad se otvori.'),
- ('Skeleton','kostur preko bilo koje kamere i ocjena koliko se poza poklapa, s glasovnim uputama.'),
  ('Vox to Txt','pritisneš F1, govoriš, i riječi se upišu gdje god je kursor.'),
  ('Mantra Manual Camera','mobitel postaje profesionalna kamera s ručnim postavkama i NDI izlazom.'),
  ('Cloud Mixer','miješa snimke, slike i prijenose uživo u jedan program s natpisima.'),
@@ -147,7 +146,7 @@ APPS_DONE = [
 s3 = sec('03','ai-lab','v','Kad soba miruje','AI laboratorij: govoriš, a soba stvara', f'''
 <div class="wrap">
 {fig('ai-storyboard','Muškarac se zavalio na nisku sofu usred sobe i mirno govori, a na zidovima se jedan po jedan pojavljuju crteži storyboarda','Kažeš što ti nije jasno, a storyboard se pojavi oko tebe.','pic wide')}
-<p>Kad nema terapije, sjednem na sofu, pustim tihu glazbu i razgovaram s Claudeom; ono što opišem pojavi se na zidovima. Glazba i spora slika vode u opušteno, budno stanje, ono koje zovemo alfa ili theta, u kojem ideje dolaze same. Ruke ostaju slobodne, nema tipkovnice ni miša: samo glas i četiri zida.</p>
+<p>Kad nema terapije, sjednem na sofu, pustim tihu glazbu i razgovaram s Claudeom; ono što opišem pojavi se na zidovima. Glazba i spora slika vode u opušteno, budno stanje, kakvo se obično povezuje s alfa i theta ritmom; meni u njemu ideje dolaze lakše. Ruke ostaju slobodne, nema tipkovnice ni miša: samo glas i četiri zida.</p>
 <ol class="flow">
 <li><b>Sjedneš</b> na sofu, svjetlo se priguši, svira tiha glazba.</li>
 <li><b>Slušaš</b>: AI ti čita tekst ili scenarij naglas, prirodnim glasom.</li>
@@ -160,8 +159,8 @@ s3 = sec('03','ai-lab','v','Kad soba miruje','AI laboratorij: govoriš, a soba s
 <ul class="tools"><li><b>Claude Code</b> mozak: razumije, planira, piše</li><li><b>Ableton Live</b> glazba i prostorni zvuk</li><li><b>DaVinci Resolve</b> montaža i boja</li><li><b>Blender</b> 3D i animacija</li><li><b>Higgsfield</b> slike, video, zvuk u videu</li><li><b>Speechify</b> čitanje naglas</li></ul>
 </div></div>
 <h3>To nije budućnost, to već radim</h3>
-<p>Sve ove aplikacije napravio sam razgovarajući s Claude Codeom. U ovoj sobi takve se stvari rade sjedeći na sofi:</p>
-<ul class="done">{''.join(f'<li><b>{n}</b>: {d}</li>' for n,d in APPS_DONE)}</ul>
+<p>Sve svoje aplikacije napravio sam razgovarajući s Claude Codeom. U ovoj sobi takve se stvari rade sjedeći na sofi.</p>
+<details><summary>Sedam aplikacija koje sam već napravio glasom</summary><ul class="done">{''.join(f'<li><b>{n}</b>: {d}</li>' for n,d in APPS_DONE)}</ul></details>
 {fig('alpha','Osoba sjedi prekriženih nogu na sofi zatvorenih očiju, a na zidovima teku meki oblici boja iz kojih izranjaju skice','Tišina prije ideje.','pic wide')}
 </div>''', lede='Isti zidovi, isti zvučnici, ali bez terapije: radionica u kojoj se glasom stvara aplikacija, glazba, film, 3D svijet ili istraživanje.')
 
@@ -179,17 +178,17 @@ USES = [
 s4 = sec('04','erf','w','Za fakultet','Što soba daje ERF-u', f'''
 <div class="wrap">
 {fig('research','Tri istraživača razgovaraju usred sobe, na zidovima veliki grafikoni i niz malih svjetlećih likova','Zidovi kao radna ploča istraživanja.','pic wide')}
-<div class="uses">{''.join(f'<div class="card"><span class="n2">{i+1:02d}</span><h4>{t}</h4><p>{d}</p><p class="ex">{e}</p></div>' for i,(t,d,e) in enumerate(USES))}</div>
+<div class="uses">{''.join(f'<div class="card"><span class="n2">{i+1:02d}</span><h3 class="h4">{t}</h3><p>{d}</p><p class="ex">{e}</p></div>' for i,(t,d,e) in enumerate(USES))}</div>
 <p class="note">Istraživanja višeosjetilnih soba još su malobrojna i dokazi su ograničeni (npr. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12255839/" rel="noopener">pregled iz 2025.</a>), pa sobu vidim kao mjesto koje stvara nova istraživanja, a ne kao dokazanu terapiju. O svemu odlučuje terapeut, a svaka snimka nastaje uz pisani pristanak.</p>
 </div>''', lede='Osim terapije, soba je mjesto za istraživanje, nastavu, disertacije i eksperimente. Evo što mogu zamisliti za vaše odsjeke.')
 
-s5 = sec('05','aplikacije','t','Aplikacije','Što već postoji', f'''
+s5 = sec('05','aplikacije','t','Aplikacije','Što već postoji', lede='Tri aplikacije koje rade već danas, bez sobe.', body=f'''
 <div class="wrap"><div class="apps">
-<div class="card"><h4>Skeleton</h4><p>Moja aplikacija za Mac: kostur preko slike s jedne ili više kamera, usporedba s ciljanom pozom, glasovne upute i ocjena od 0 do 100. Mobiteli preko USB-a ili Wi-Fija postaju njezine kamere.</p></div>
-<div class="card mg"><h4>MindGarden</h4><p>Moja besplatna aplikacija za vježbanje uma, napravljena za moju baku: zagonetke, kartice za pamćenje, čitanje sata, nizovi brojeva i igre jezika u kojima šest prijatelja iz šest zemalja zajedno uređuje vrt. Radi bez interneta, na šest jezika, za više korisnika.</p>
+<div class="card"><h3 class="h4">Skeleton</h3><p>Moja aplikacija za Mac: kostur preko slike s jedne ili više kamera, usporedba s ciljanom pozom, glasovne upute i ocjena od 0 do 100. Mobiteli preko USB-a ili Wi-Fija postaju njezine kamere.</p></div>
+<div class="card mg"><h3 class="h4">MindGarden</h3><p>Moja besplatna aplikacija za vježbanje uma, napravljena za moju baku: zagonetke, kartice za pamćenje, čitanje sata, nizovi brojeva i igre jezika u kojima šest prijatelja iz šest zemalja zajedno uređuje vrt. Radi bez interneta, na šest jezika, za više korisnika.</p>
 <div class="shots"><img src="img/mindgarden/mg-lang.jpg" alt="MindGarden: igra Upoznaj prijatelje sa šest zastava" width="600" height="663" loading="lazy"><img src="img/mindgarden/mg-clock.jpg" alt="MindGarden: koliko sati pokazuje sat" width="600" height="663" loading="lazy"><img src="img/mindgarden/mg-pairs.jpg" alt="MindGarden: pronađi parove, tri razine" width="600" height="663" loading="lazy"></div>
 <p><a class="btn" href="https://drive.google.com/drive/folders/1ENHB7nE4Zr2pi9wOPSBpndioFYJy0ulF" rel="noopener">Preuzmi MindGarden (Android)</a></p></div>
-<div class="card"><h4>Chakra and Elements Toning</h4><p>Aplikacija za meditaciju sa zvukovima čakri i elemenata, MilkDrop slikom i krugom daha. Za Android.</p><p><a class="btn" href="https://github.com/markoboskoauroville/MANTRA_ROOM/releases/download/v25/25-chakra-elements-toning-v25.apk" data-dl-app="chakra-and-elements-toning" data-dl-label="preuzimanja" rel="noopener">Preuzmi</a></p></div>
+<div class="card"><h3 class="h4">Chakra and Elements Toning</h3><p>Aplikacija za meditaciju sa zvukovima čakri i elemenata, MilkDrop slikom i krugom daha. Za Android.</p><p><a class="btn" href="https://github.com/markoboskoauroville/MANTRA_ROOM/releases/download/v25/25-chakra-elements-toning-v25.apk" data-dl-app="chakra-and-elements-toning" data-dl-label="preuzimanja" rel="noopener">Preuzmi</a></p></div>
 </div></div>''')
 
 s6 = sec('06','oprema','a','Izvedba','Oprema, shema i troškovi', f'''
@@ -197,7 +196,7 @@ s6 = sec('06','oprema','a','Izvedba','Oprema, shema i troškovi', f'''
 <div class="totals">
 <div class="tile"><span>Soba, jednokratno</span><b>{eur(room_tot+soft_tot)}</b></div>
 <div class="tile"><span>Prsten kamera, dodatno</span><b>{eur(ring_tot)}</b></div>
-<div class="tile"><span>Mjesečno</span><b>≈ 214 € + 49 $</b></div>
+<div class="tile"><span>Mjesečno</span><b>≈ 260 €</b></div>
 </div>
 <h3>Shema spajanja</h3>
 {SCHEME}
@@ -208,7 +207,7 @@ s6 = sec('06','oprema','a','Izvedba','Oprema, shema i troškovi', f'''
 <details><summary>Softver, jednokratno ({eur(soft_tot)})</summary><div class="tw"><table>{soft_t}<tfoot><tr><td colspan="3">Ukupno</td><td class="n">{eur(soft_tot)}</td><td></td></tr></tfoot></table></div></details>
 <details><summary>Pretplate, mjesečno</summary><div class="tw"><table><thead><tr><th>Pretplata</th><th class="n">Mjesečno</th><th>Gdje</th></tr></thead><tbody>{month_rows}</tbody></table></div></details>
 <details><summary>Prije kupnje</summary><p>Kod Optome potvrditi da ZH430UST radi okrenut naopako na nosaču OWM3000. Adam D3V ima navoj 3/8" i izravno se navije na stropni nosač; rad naopako proizvođač ne navodi, pa svaki zvučnik dobiva sigurnosnu sajlu. Godox ne radi stropne nosače, pa je umjesto stalka za rasvjetu odabran stropni nosač s istim navojem. Zylia trenutno nema na zalihi u Njemačkoj. Prsten kamera vješa izvođač uz atest statičara. Stavke označene kao procjena nisu provjerene u trgovini. Nisu uključene utičnice na stropu ni ugradnja.</p></details>
-<p class="note">Ukupno jednokratno: <b>{eur(ONE_TIME)}</b> (soba, prsten i softver), uz oko 214 € i 49 $ mjesečno. Cijene su od 21.11.2026., s PDV-om osim gdje piše drugačije.</p>
+<p class="note">Ukupno jednokratno: <b>{eur(ONE_TIME)}</b> (soba, prsten i softver), uz oko 260 € mjesečno (Claude Max i Higgsfield). Cijene su od 21.11.2026., s PDV-om osim gdje piše drugačije.</p>
 </div>''')
 
 EUPH = open(os.path.join(PARTS,'parts_euphony.html')).read() if PARTS else ''
@@ -221,24 +220,29 @@ s7 = sec('07','nadahnuce','w','Nadahnuće','Svaram, instrumenti i ljudi', f'''
 <p>Dok sam živio u Aurovilleu, snimao sam filmove za <a href="https://svaram.org" rel="noopener">Svaram</a>, radionicu za zvuk i instrumente. Njihovi prostori su uzor za ovu sobu: instrumenti koje dijete može dotaknuti i osjetiti cijelim tijelom.</p>
 <div class="duo">
 <div><figure class="pic nat"><img src="img/svaram/soundgarden-1.jpg" alt="Metalni ksilofon s velikim cijevima u zelenom vrtu Svarama" width="1600" height="534" loading="lazy"><figcaption><a href="https://svaram.org/sound-garden-art-installations/" rel="noopener">Soundgarden</a>: zvučni vrt na otvorenom.</figcaption></figure>{yt('GQyXzu90d0k','SVARAM Sound Garden, film Marka Boška')}</div>
-<div><figure class="pic nat"><img src="img/svaram/sonorium-2.jpg" alt="Terapeut uz drveni krevet s monokordom na kojem leži žena" width="1600" height="667" loading="lazy"><figcaption><a href="https://svaram.org/sonorium/" rel="noopener">Sonorium</a>: prostor za zvučno iscjeljivanje.</figcaption></figure>{yt('78xD4G86daA','SVARAM Sonorium, film Marka Boška')}</div>
+<div><figure class="pic nat"><img src="img/svaram/sonorium-2.jpg" alt="Terapeut uz drveni krevet s monokordom na kojem leži žena" width="1600" height="667" loading="lazy"><figcaption><a href="https://svaram.org/sonorium/" rel="noopener">Sonorium</a>: prostor za opuštanje zvukom.</figcaption></figure>{yt('78xD4G86daA','SVARAM Sonorium, film Marka Boška')}</div>
 </div>
 <p class="note">Fotografije: Svaram, Auroville. Filmove sam snimio ja. Više: <a href="https://youtube.com/playlist?list=PLcbk1jSryyxkAe66vLKVKnSPGOVB5PmB3" rel="noopener">Auroville Videos by Marko Bosko</a>.</p>
 <div class="trio">
-<div class="card"><h4>Euphony Trio: kristalna zvona</h4><p>Kristalna zvona Alana Towera vrte se do sedam minuta, a njihov se zvuk razlijeva cijelom sobom. Svira ih terapeut, ostali slušaju i osjećaju. Cijena na upit.</p>{yt('Mv5_qU3qfts','Marko svira kristalna zvona')}<p><a class="btn off" href="https://atower1717.github.io/Aperture-Gallery-2/listen/flumie-float/" rel="noopener">Poslušaj Euphony</a></p></div>
-<div class="card">{fig('lifestyle-3','Djeca i odrasli muškarac sjede oko velikog bubnja i zajedno bubnjaju')}<h4>Marko Borić: veliki bubnjevi</h4><p>Gradi bubnjeve na kojima svira više djece zajedno i vodi radionice izrade šejkera i bubnjeva, u kojima svatko napravi svoj instrument.</p></div>
-<div class="card"><h4>Stonewhistle: flaute bez pogrešnog tona</h4><p>Glinene flaute Hansa Houkesa u kojima svaka kombinacija rupica zvuči skladno. Moj video pokazuje kako se sviraju.</p>{yt('qVSTpt1eESs','Kako se sviraju flaute Stonewhistle, video Marka Boška')}</div>
+<div class="card"><h3 class="h4">Euphony Trio: kristalna zvona</h3><p>Kristalna zvona Alana Towera vrte se do sedam minuta, a njihov se zvuk razlijeva cijelom sobom. Svira ih terapeut, ostali slušaju i osjećaju. Cijena na upit.</p>{yt('Mv5_qU3qfts','Marko svira kristalna zvona')}<p><a class="btn off" href="https://atower1717.github.io/Aperture-Gallery-2/listen/flumie-float/" rel="noopener">Poslušaj Euphony</a></p></div>
+<div class="card">{fig('lifestyle-3','Djeca i odrasli muškarac sjede oko velikog bubnja i zajedno bubnjaju')}<h3 class="h4">Marko Borić: veliki bubnjevi</h3><p>Gradi bubnjeve na kojima svira više djece zajedno i vodi radionice izrade šejkera i bubnjeva, u kojima svatko napravi svoj instrument.</p></div>
+<div class="card"><h3 class="h4">Stonewhistle: flaute bez pogrešnog tona</h3><p>Glinene flaute Hansa Houkesa u kojima svaka kombinacija rupica zvuči skladno. Moj video pokazuje kako se sviraju.</p>{yt('qVSTpt1eESs','Kako se sviraju flaute Stonewhistle, video Marka Boška')}</div>
 </div>
 <details><summary>Flaute Stonewhistle s cijenama</summary>{grid}<p class="note">Flaute se rade po narudžbi, čeka se 3 do 5 mjeseci; za sviranje je potreban dah.</p></details>
 </div>''')
 
 s8 = f'''<section id="o-meni" class="sec about"><div class="wrap"><p class="kicker">O meni</p><h2>Marko Boško</h2>
-<p>Dvadeset sedam godina radio sam zvuk i sliku za hrvatske televizije, sedam godina živio sam u Aurovilleu u Indiji, sviram udaraljke i kao DJ Mantra glazbu za ples. Danas glasom, uz Claude Code, gradim aplikacije za zvuk, sliku i pokret.</p>
+<p>Dvadeset sedam godina radio sam zvuk i sliku za hrvatske televizije, sedam godina živio sam u Aurovilleu u Indiji, sviram udaraljke, a kao DJ Mantra puštam glazbu za ples. Danas glasom, uz Claude Code, gradim aplikacije za zvuk, sliku i pokret.</p>
+<p class="lede">Volio bih vam sobu pokazati uživo i čuti što bi vašem odsjeku bilo najkorisnije. Predlažem razgovor od pola sata, na fakultetu ili putem videopoziva.</p><p><a class="btn" href="mailto:marko.bosko@auroville.community">Dogovorimo razgovor</a></p>
 <p class="links"><a href="https://markobosko.org" rel="noopener">markobosko.org</a> <a href="https://djmantra.markobosko.org" rel="noopener">djmantra.markobosko.org</a> <a href="mailto:marko.bosko@auroville.community">marko.bosko@auroville.community</a></p>
 <p class="note">Slike sobe prikaz su zamišljenog prostora i izrađene su umjetnom inteligencijom. MilkDrop kadrovi su pravi.</p></div></section>
 '''
 
 head = open(HEAD_FILE).read()
+head = re.sub(r'<title>[^<]*</title>', '<title>Jedna soba, četiri namjene · Marko Boško</title>', head)
+head = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="Jedna soba, četiri namjene · Marko Boško">', head)
+head = re.sub(r'<meta property="og:description" content="[^"]*">', '<meta property="og:description" content="Terapijska soba pod morem, laboratorij za analizu pokreta, AI laboratorij i istraživanje. Prijedlog za ERF Zagreb.">', head)
+head = head.replace('<meta name="twitter:card"', '<meta property="og:image" content="https://therapies.markobosko.org/img/room.jpg">\n<meta name="twitter:card"') if 'og:image' not in head else head
 head = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="Jedna soba, četiri namjene: terapijska soba pod morem, laboratorij za analizu pokreta, AI laboratorij i istraživanje. Prijedlog za ERF Zagreb.">', head)
 head = head.replace('</head>', '<link rel="preload" as="image" href="img/room-960.jpg" imagesrcset="img/room-960.jpg 960w, img/room.jpg 1920w" imagesizes="100vw">\n</head>') if 'rel="preload"' not in head else head
 page = (head + '<body>\n<a class="skip" href="#terapija">Preskoči na sadržaj</a>\n' + hero + '<main>\n' + s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + '</main>\n'

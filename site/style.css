@@ -124,3 +124,11 @@ tfoot td{font-weight:600;border-bottom:0;background:var(--card)}
 @media(max-width:700px){.sec .num{font-size:64px;top:28px;opacity:.6}.sec .lede{position:relative}}
 .topnav .wrap{scroll-padding-inline:18px}
 .topnav .wrap>a:first-child{margin-left:0}
+/* Fable review 1 (21.11.2026) */
+.hero::after{background:linear-gradient(180deg,#06222b22 0%,#06222b99 42%,var(--bg) 90%)}
+.hero .kicker{color:#fff;text-shadow:0 1px 8px #000c}
+.sec>.wrap+.wrap{position:relative;z-index:1}
+.sec .num{z-index:0;opacity:.5}
+@media(min-width:760px){#pokret .uses{grid-template-columns:repeat(4,1fr)}}
+.h4{font-size:18px;font-weight:600;margin:10px 0 6px;line-height:1.25}
+details .done{padding:4px 16px 12px 36px}
