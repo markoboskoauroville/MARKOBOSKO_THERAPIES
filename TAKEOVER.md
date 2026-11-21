@@ -28,3 +28,4 @@ The repo is public and unpromoted: no README, no description.
 - Alan Tower (Marko, 21.11.2026: he created and organizes the Hemi-Sync Flow app) has a short card with Marko description only: no public source confirms his role in the app, so no title, link or biography is published.
 - "BrainSync" text is from hemi-sync.com facts only; replace with BRAINSYNC.md facts when delivered.
 - DJ Mantra's players are inline code in its single index.html, not a module file, so this site has its own player.js.
+- /admin (21.11.2026): "Alan Tower – javni radovi" is in `admin_pending/admin/index.html`, NOT in `site/`, because Cloudflare Zero Trust Access is not enabled on the account (API: access.api.error.not_enabled). `deploy.sh` copies it only with `ACCESS_ON=1`, after an Access app for `markoboskotherapies.pages.dev/admin*` (allow marko.bosko@auroville.community and marko.bosko@gmail.com, One-time PIN) exists. robots.txt disallows /admin; sitemap lists only `/`.
