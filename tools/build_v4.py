@@ -17,7 +17,8 @@ def fig(name, alt, cap=None, cls='pic', lazy=True, w=1920, h=1072):
 
 def yt(vid, title, extra=''):
     return (f'<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{vid}{extra}" title="{esc(title)}" loading="lazy" '
-            'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
+            'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
+            f'<p class="ytl"><a href="https://www.youtube.com/watch?v={vid}" rel="noopener">Ako se video ne prikaže, otvori ga na YouTubeu</a></p>')
 
 def sec(num, sid, dot, kicker, title, body='', lede=None):
     l = f'<p class="lede">{lede}</p>' if lede else ''
@@ -77,6 +78,7 @@ room_t, room_tot = table(ROOM); ring_t, ring_tot = table(RING); soft_t, soft_tot
 month_rows = '\n'.join(f'<tr><td>{n}<br><small>{note}</small></td><td class="n">{p}</td><td><a href="{u}" rel="noopener">{w}</a></td></tr>' for n,p,u,w,note in MONTH)
 ONE_TIME = room_tot + ring_tot + soft_tot
 
+TRACKS = ['Trentemøller – Miss You','Chantress Seba i Malte Marten – Song from the Forest','Nils Frahm – Says','Chantress Seba – You Are Light','Nils Frahm – Ambre','Trentemøller – Nightwalker','Ólafur Arnalds – Near Light','Nils Frahm – Familiar','Chantress Seba i Malte Marten – The Oracle','Brian Eno – An Ending (Ascent)','Nils Frahm – Sunson','Hania Rani – Glass','Jon Hopkins – Abandon Window','Marconi Union – Weightless']
 PLAYLIST = ['hE_8C33gm7A','bfcl1JMGXdI','dIwwjy4slI8','gRBg2d79Q8c','GFbkF_fsW24','SasKGA1hq9Y','0kYc55bXJFI','tgwBXJE-9sM','RpclSuABeRc','OlaTeXX3uH8','YFkKBfmSx5o','l0yRNQj2_tc','mqU0XsELBCA','UfcAVejslrU']
 
 # ------------------------------------------------------------------ scheme (same as phase 3)
@@ -116,7 +118,9 @@ s1 = sec('01','terapija','t','Terapija','Soba pod morem', f'''
 <div class="gal4"><img src="img/milkdrop/milkdrop-1-800.jpg" alt="MilkDrop: plavo-zlatno nebo kao oblaci" width="800" height="450" loading="lazy"><img src="img/milkdrop/milkdrop-3-800.jpg" alt="MilkDrop: zeleni i tirkizni slojevi poput tekuće stijene" width="800" height="450" loading="lazy"></div>
 <p><button type="button" id="milk-start" class="btn big">Pokreni MilkDrop uz podvodni zvuk</button></p>
 <p>Za mirne trenutke složio sam DJ Mantra playlistu mekane, ambijentalne glazbe. Počinje s pjesmom Miss You od Trentemøllera, a dalje su Chantress Seba, Nils Frahm, Ólafur Arnalds, Brian Eno i Hania Rani. Zvučne pejzaže kiše, mora i šume daje <a href="https://mynoise.net" rel="noopener">myNoise</a>, raspoređene po osam zvučnika.</p>
-{yt(PLAYLIST[0], 'DJ Mantra ambijentalna playlista', '?playlist=' + ','.join(PLAYLIST[1:]))}
+<div class="pl" id="pl"><div class="video" id="pl-box" hidden></div>
+<ol class="pl-list">{''.join(f'<li><button type="button" class="pl-b" data-v="{v}"><img src="https://i.ytimg.com/vi/{v}/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span>{esc(t)}</span></button><a href="https://www.youtube.com/watch?v={v}" rel="noopener" aria-label="{esc(t)} na YouTubeu">YouTube</a></li>' for v,t in zip(PLAYLIST,TRACKS))}</ol>
+<p><a class="btn off" href="https://www.youtube.com/watch_videos?video_ids={','.join(PLAYLIST)}" rel="noopener">Otvori cijelu playlistu na YouTubeu</a></p></div>
 </div>''', lede='Osoba u invalidskim kolicima sjedi usred sobe, a oko nje pliva karipski greben. Zvuk dolazi iz cijele sobe, kao da je stvarno pod morem. Ništa se ne mora raditi. A kad osoba to poželi, soba odgovara na njezin pokret i glas.')
 
 s2 = sec('02','pokret','a','Analiza pokreta','Laboratorij pokreta: hod prije i poslije terapije', f'''
@@ -248,6 +252,6 @@ head = head.replace('</head>', '<link rel="preload" as="image" href="img/room-96
 page = (head + '<body>\n<a class="skip" href="#terapija">Preskoči na sadržaj</a>\n' + hero + '<main>\n' + s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + '</main>\n'
         '<div id="mk" hidden role="dialog" aria-label="MilkDrop"><canvas id="mk-cv" aria-hidden="true"></canvas><button type="button" id="mk-x">✕ Izlaz</button></div>\n'
         '<audio id="mk-au" src="audio/karipsko-more-underwater.mp3" preload="none" loop></audio>\n'
-        '<script src="milk.js" defer></script>\n<script src="https://mantra-downloads.marko-bosko-925.workers.dev/counter.js" defer></script>\n</body>\n</html>\n')
+        '<script src="playlist.js" defer></script>\n<script src="milk.js" defer></script>\n<script src="https://mantra-downloads.marko-bosko-925.workers.dev/counter.js" defer></script>\n</body>\n</html>\n')
 open(os.path.join(ROOT,'site','index.html'),'w').write(page)
 print('one-time', round(ONE_TIME,2), 'room', round(room_tot,2), 'ring', round(ring_tot,2), 'soft', soft_tot)

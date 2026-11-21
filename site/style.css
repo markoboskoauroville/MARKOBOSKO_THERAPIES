@@ -132,3 +132,11 @@ tfoot td{font-weight:600;border-bottom:0;background:var(--card)}
 @media(min-width:760px){#pokret .uses{grid-template-columns:repeat(4,1fr)}}
 .h4{font-size:18px;font-weight:600;margin:10px 0 6px;line-height:1.25}
 details .done{padding:4px 16px 12px 36px}
+/* playlist with own track list (22.11.2026) */
+.ytl{font-size:14px;margin:-8px 0 14px}.ytl a{color:var(--mute)}
+.pl-list{list-style:none;padding:0;margin:14px 0;display:grid;gap:8px}@media(min-width:760px){.pl-list{grid-template-columns:1fr 1fr}}
+.pl-list li{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 12px 6px 6px}
+.pl-b{flex:1;min-width:0;display:flex;align-items:center;gap:12px;background:none;border:0;color:var(--ink);font:inherit;font-size:15px;text-align:left;cursor:pointer;padding:0;min-height:48px}
+.pl-b img{width:80px;height:45px;object-fit:cover;border-radius:8px;flex:none;background:var(--bg2)}
+.pl-b[aria-pressed=true] span{color:var(--accent);font-weight:600}
+.pl-list a{font-size:13px;color:var(--mute);flex:none}
