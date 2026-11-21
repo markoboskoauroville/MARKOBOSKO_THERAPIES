@@ -13,7 +13,7 @@ cd "$HERE"
 # confirm the project exists first; stop if it does not
 npx --yes wrangler pages project list 2>/dev/null | grep -q " $PROJECT " || { echo "Pages project $PROJECT not found: stop"; exit 1; }
 # deploy a clean copy: research notes (*.md) stay in the repo, never on the site
-STAGE=$(mktemp -d); rsync -a --exclude='*.md' site/ "$STAGE/"
+STAGE=$(mktemp -d); git archive HEAD site | tar -x -C "$STAGE" --strip-components=1; find "$STAGE" -name '*.md' -delete   # clean export of the committed files only
 # /admin goes live ONLY when Cloudflare Access protects it: run with ACCESS_ON=1 after the Access app for markoboskotherapies.pages.dev/admin* exists
 if [ "${ACCESS_ON:-0}" = "1" ]; then cp -R admin_pending/admin "$STAGE/admin"; fi
 npx --yes wrangler pages deploy "$STAGE" --project-name "$PROJECT" --branch main --commit-dirty=true 2>&1 | grep -E "Uploading|https://|Success|rror" | head -6
