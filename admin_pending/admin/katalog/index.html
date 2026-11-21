@@ -1,0 +1,85 @@
+<!doctype html><html lang="hr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#0d0a0b"><base href="/"><title>Hemi-Sync katalog: odabir</title><style>
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#0d0a0b;color:#f2ece4;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;
+background-image:radial-gradient(900px 600px at 100% 0,rgba(224,162,87,.14),transparent 70%),radial-gradient(700px 600px at 0 20%,rgba(168,67,47,.12),transparent 70%);background-attachment:fixed}
+.w{max-width:860px;margin:0 auto;padding:max(20px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 120px max(16px,env(safe-area-inset-left))}
+.k{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:#85796f;margin:24px 0 8px}
+h1{font:600 clamp(1.6rem,6vw,2.3rem)/1.15 Georgia,"Times New Roman",serif;margin:0 0 6px;color:#f3c97a}
+.sub{color:#b9ad9d;margin:0 0 14px}a{color:#f3c97a}
+.bar{position:sticky;top:0;z-index:5;background:rgba(13,10,11,.92);backdrop-filter:blur(8px);padding:10px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-bottom:1px solid rgba(224,162,87,.2)}
+button,.f{font:inherit;color:#f2ece4;background:rgba(255,240,220,.05);border:1px solid rgba(224,162,87,.3);border-radius:999px;padding:8px 14px;min-height:40px;cursor:pointer}
+button:hover,button:focus-visible{box-shadow:0 0 0 1px rgba(243,201,122,.55),0 0 18px rgba(224,162,87,.25);outline:none}
+.f[aria-pressed=true]{background:#e0a257;color:#1a1206;border-color:#e0a257}
+.go{background:#f3c97a;color:#1a1206;border-color:#f3c97a;font-weight:600}
+.cnt{color:#b9ad9d;margin-left:auto}
+h2{font:600 1.2rem Georgia,serif;color:#e0a257;margin:26px 0 6px;border-bottom:1px solid rgba(224,162,87,.2);padding-bottom:6px}
+.row{display:flex;align-items:center;gap:12px;padding:10px 12px;margin:6px 0;background:rgba(30,22,20,.72);border:1px solid rgba(224,162,87,.16);border-radius:14px}
+.row.on{border-color:rgba(243,201,122,.55)}
+.row input{width:22px;height:22px;accent-color:#e0a257;flex:none}
+.row .t{flex:1;min-width:0;overflow-wrap:anywhere}.row .t small{color:#85796f}
+.p{flex:none;width:44px;height:44px;padding:0;border-radius:50%;background:#e0a257;color:#1a1206;border:0}
+.v{font-size:.7rem;padding:1px 8px;border-radius:999px;border:1px solid #a8432f;color:#ef8a73;margin-left:6px;white-space:nowrap}
+.todo{color:#85796f;border:1px dashed rgba(224,162,87,.3);border-radius:12px;padding:12px 14px}
+#msg{color:#f3c97a;min-height:1.4em}
+</style></head><body><div class="w">
+<p class="k">Samo za Marka</p><h1>Hemi-Sync katalog: odabir</h1>
+<p class="sub">Označi uzorke koji ti se sviđaju, a zatim izvezi popis. Odabir se pamti u ovom pregledniku. <a href="/admin/">Natrag na admin</a></p>
+<div class="bar" id="bar">
+<button class="f" data-f="all" aria-pressed="true">Svi</button><button class="f" data-f="on" aria-pressed="false">Odabrani</button><button class="f" data-f="off" aria-pressed="false">Neodabrani</button><button class="f" data-f="novoice" aria-pressed="false">Bez glasa</button>
+<span class="cnt" id="cnt"></span></div>
+<p style="margin:12px 0"><button class="go" id="exp">Izvezi odabrane</button> <button id="cpy">Kopiraj odabrane</button> <span id="msg" role="status"></span></p>
+<div id="list"><p class="todo">Uzorci stižu…</p></div></div>
+<script src="/player.js"></script>
+<script>
+(() => {
+  const P = window.Therapy, KEY = 'hemisync-odabir';
+  let checked = new Set(JSON.parse(localStorage.getItem(KEY) || '[]'));
+  let items = [], filter = 'all';
+  const pad = (n, k) => String(n).padStart(k, '0');
+  const get = u => fetch(u, {cache: 'no-cache'}).then(r => r.ok ? r.json() : []).catch(() => []);
+  const arr = d => Array.isArray(d) ? d : (d && (d.items || d.tracks || d.samples)) || [];
+  Promise.all([get('/audio/samples.json'), get('/audio/catalog.json')]).then(([s, c]) => {
+    arr(s).forEach(x => items.push({g: 'Trenutni uzorci (stranica)', no: 'S' + pad(x.n, 2), album: x.album || x.title, title: x.title, artist: x.artist || '', voice: x.voice === true, file: String(x.file).replace(/^\/?audio\//, '')}));
+    arr(c).forEach(x => items.push({g: 'Katalog', no: pad(x.n, 3), album: x.album || '', title: x.title || x.file, artist: x.artist || '', voice: x.voice === true, file: 'catalog/' + String(x.file).replace(/^\/?audio\/(catalog\/)?/, '').replace(/^catalog\//, '')}));
+    items.forEach(it => it.id = it.no + '|' + it.file);
+    draw();
+  });
+  const line = it => [it.no, it.album, it.title, it.artist].join(' | ');
+  const label = it => it.no + '. ' + [it.album, it.title, it.artist].filter(Boolean).join(' · ');
+  const vis = () => items.filter(it => filter === 'all' || (filter === 'on' && checked.has(it.id)) || (filter === 'off' && !checked.has(it.id)) || (filter === 'novoice' && !it.voice));
+  function draw() {
+    const v = vis(), box = document.getElementById('list'); box.innerHTML = '';
+    if (!items.length) { box.innerHTML = '<p class="todo">Uzorci stižu…</p>'; count(); return; }
+    // the shared player plays the next row of what is on screen
+    const cur = P.tracks[P.i] && P.tracks[P.i].file; P.tracks = v.map(it => ({file: it.file, title: it.title})); P.i = cur ? P.tracks.findIndex(t => t.file === cur) : -1;
+    let g = null;
+    v.forEach((it, idx) => {
+      if (it.g !== g) { g = it.g; const h = document.createElement('h2'); h.textContent = g; box.append(h); }
+      const r = document.createElement('div'); r.className = 'row'; r.dataset.idx = idx; r.dataset.file = it.file;
+      const c = document.createElement('input'); c.type = 'checkbox'; c.checked = checked.has(it.id); c.setAttribute('aria-label', 'Odaberi: ' + label(it));
+      c.onchange = () => { c.checked ? checked.add(it.id) : checked.delete(it.id); localStorage.setItem(KEY, JSON.stringify([...checked])); count(); if (filter === 'on' || filter === 'off') draw(); };
+      const t = document.createElement('div'); t.className = 't'; t.textContent = label(it);
+      if (it.voice) { const b = document.createElement('span'); b.className = 'v'; b.textContent = 'glas'; t.append(b); }
+      const p = document.createElement('button'); p.type = 'button'; p.className = 'p'; p.setAttribute('aria-label', 'Slušaj: ' + label(it));
+      p.onclick = () => P.i === idx && P.tracks[idx].file === it.file ? P.toggle() : P.play(idx);
+      r.append(c, t, p); box.append(r);
+    });
+    mark(); count();
+  }
+  function mark() { document.querySelectorAll('.row').forEach(r => { const on = P.tracks[P.i] && P.tracks[P.i].file === r.dataset.file; r.classList.toggle('on', !!on); r.querySelector('.p').textContent = on && !P.audio.paused ? '❚❚' : '▶'; if (on && !P.audio.paused) r.scrollIntoView({block: 'nearest'}); }); }
+  P.listeners.push(mark);
+  function count() { document.getElementById('cnt').textContent = 'Odabrano: ' + items.filter(i => checked.has(i.id)).length + ' od ' + items.length; }
+  document.querySelectorAll('[data-f]').forEach(b => b.onclick = () => { filter = b.dataset.f; document.querySelectorAll('[data-f]').forEach(x => x.setAttribute('aria-pressed', x === b)); draw(); });
+  const text = () => items.filter(i => checked.has(i.id)).map(line).join('\n') + '\n';
+  const say = m => { const e = document.getElementById('msg'); e.textContent = m; setTimeout(() => e.textContent = '', 3500); };
+  document.getElementById('exp').onclick = () => {
+    if (!checked.size) return say('Ništa nije odabrano.');
+    const d = new Date(), n = 'hemisync-odabir-' + d.getFullYear() + '-' + pad(d.getMonth() + 1, 2) + '-' + pad(d.getDate(), 2) + '.txt';
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text()], {type: 'text/plain;charset=utf-8'})); a.download = n; document.body.append(a); a.click(); a.remove(); say('Izvezeno: ' + n);
+  };
+  document.getElementById('cpy').onclick = () => {
+    if (!checked.size) return say('Ništa nije odabrano.');
+    (navigator.clipboard ? navigator.clipboard.writeText(text()) : Promise.reject()).then(() => say('Kopirano.'), () => say('Kopiranje nije uspjelo.'));
+  };
+})();
+</script></body></html>

@@ -24,7 +24,7 @@
 // koriste ISTI audio element i isti red skladbi. Slika u terapiji: MilkDrop (butterchurn, isti kao u Mantra Room) ili spore boje čakri.
 (() => {
   const $ = id => document.getElementById(id);
-  const box = $('player'); if (!box) return;
+  const box = $('player');
   const P = window.Therapy = {tracks: [], groups: [], i: -1, audio: new Audio(), listeners: []};
   P.audio.preload = 'none'; P.audio.muted = false; P.audio.volume = 1;
   // iPhone/Safari: sound as "playback", so the mute switch and an unconnected WebAudio context (MilkDrop) cannot silence the music
@@ -37,6 +37,7 @@
   P.audio.onplay = P.audio.onpause = tell;
   P.audio.onerror = () => { const n = document.getElementById('tm-title'); const m = 'Zvuk se ne može učitati. Pokušaj ponovno ili odaberi drugu skladbu.'; if (n) n.textContent = m; };
   P.audio.volume = 1;
+  if (!box) return;   // pages without #player (the admin catalogue) use only P: the one shared audio element
 
   const say = t => { box.innerHTML = '<p class="todo">' + t + '</p>'; };
   const tr = t => ({title: t.title || t.name || t.file, file: t.file || t.src || t.url, sub: t.artist || t.sub || '',
