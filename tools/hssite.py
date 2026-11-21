@@ -48,7 +48,7 @@ TEXT = {
 # Player order (Marko, 21.11.2026: numbered 1..22 so he can pick favourites by number): the clip-only albums in the
 # order they were recorded, then the full albums' clips in album order. New clips append; numbers never move.
 CLIP_ORDER = ['himalayan-soul', 'eternity-within', 'galilean-moons', 'oasis', 'orbits-of-hope', 'reflections',
-              'pachelbel-canon', 'prisms', 'portraits', 'music-for-rejuvenation', 'komuso', 'romantic-wonder']
+              'pachelbel-canon', 'prisms', 'portraits', 'music-for-rejuvenation', 'komuso', 'masterworks']
 SMALL = {'in', 'of', 'the', 'a', 'an', 'and', 'to', 'with', 'for', 'on', 'at', 'by', 'de', 'del', 'la', 'le', 'des'}
 ARTIST_FIX = {'Johanne Pachelbel': 'Johann Pachelbel'}
 

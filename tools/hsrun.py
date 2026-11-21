@@ -34,7 +34,7 @@ SWAPS = ['Dreamland', 'Midsummer Night', 'Music for Unwinding']
 CLIP_CANDIDATES = ['Desert Moon Song with Hemi-Sync', 'Himalayan Soul', 'Eternity Within', 'Galilean Moons', 'Oasis',
                    'Orbits of Hope', 'Reflections', 'Pachelbel Canon', 'Prisms', 'Portraits', 'Music for Rejuvenation',
                    'Komuso', 'Romantic Wonder', 'Masterworks', 'Midsummer Night', 'Music for Unwinding']
-VOICE = re.compile(r'\bguid(e|ed|ance)\b|\bvoices?\b|\bvocals?\b|narrat|\bspoken\b|\bspeak|\bsing(s|ing|er|ers)?\b|\bsung\b|'
+VOICE = re.compile(r'\bguid(e|ed|ance)\b|\bvoices?\b|\bvocals?\b|narrat|\bspoken\b|\bspeaks? (to you|softly|gently)\b(?! to your soul)|\bsing(s|ing|er|ers)?\b|\bsung\b|'
                    r'\bchant|\blyric|\bverbal|affirmation|instruction|\bexercises?\b|focus \d|countdown|\btalk|Stimme|gesprochen', re.I)
 CALM = re.compile(r'lullaby|cradle|berceuse|dream|calm|peace|moon|rain|cloud|water|sleep|serene|quiet|gentle|night|'
                   r'stillness|rest|float|soft', re.I)
