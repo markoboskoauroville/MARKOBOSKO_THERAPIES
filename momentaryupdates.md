@@ -14,5 +14,7 @@ Site: https://markoboskotherapies.pages.dev (Cloudflare Pages project markobosko
 Read as: "Alan Tower" = dictated name of a therapist (to be searched); "Stone Whistle esoterapäutik" = dictated instrument maker (to be searched); "Emina" = Emina's cognitive app (Kognius / "Cognition app for grandmother"); "meditation app" = Chakra and Elements Toning (Mantra). "Brain sync" = BrainSync.
 Added as PROJECT 2 on the same site, below project 1 and above About me.
 
+Correction 21.11.2026: Alan Watts / Alan Tower = Alan Tauer.
+
 ## 21.11.2026, Marko's decisions
 No donation bowl on this site (Marko, 21.11.2026).
