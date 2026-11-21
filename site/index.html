@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Marko Bosko Therapies</title>
-<meta name="description" content="Soba za terapiju zvukom i bojom: četiri zida s projekcijom podmorja Kariba, zvučnici oko sobe i Mac Mini. Popis opreme s cijenama i uzorci Hemi-Sync glazbe.">
+<meta name="description" content="Soba za terapiju zvukom i bojom: četiri zida s projekcijom podmorja Kariba, zvučnici oko sobe i Mac Mini. Sve visi sa stropa, igra pokreta, pjesme iz glasa, 3D snimanje, popis opreme i troškova.">
 <link rel="canonical" href="https://therapies.markobosko.org/">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Marko Bosko">
@@ -28,80 +28,164 @@
 
 <section id="projekt-1">
 <h1>Soba pod morem</h1>
-<figure class="fig"><img src="img/room.jpg" srcset="img/room-960.jpg 960w, img/room.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Osoba u invalidskim kolicima u sobi čija su sva četiri zida projekcija podmorja Kariba: tirkizna voda, koralji, ribe i sunčeve zrake" width="1600" height="900" onerror="this.remove()"><figcaption class="ph">Slika sobe stiže uskoro</figcaption></figure>
-<p>Osoba u invalidskim kolicima sjedi usred sobe, a sa sva četiri zida oko nje pliva karipski greben. Tirkizna voda, koralji, ribe i sunčeve zrake koje padaju s površine. Ništa se ne mora raditi, dovoljno je biti tu i gledati.</p>
+<figure class="fig"><img src="img/room.jpg" srcset="img/room-960.jpg 960w, img/room.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Mlada osoba u invalidskim kolicima usred sobe gleda kornjaču i ražu na zidovima; projektori i zvučnici s mobitelima vise sa stropa, pod je prazan" width="1920" height="1072"></figure>
+<p>Osoba u invalidskim kolicima sjedi usred sobe, a sa sva četiri zida oko nje pliva karipski greben. Tirkizna voda, koralji, ribe, kornjača i raža, i sunčeve zrake koje padaju s površine. Zvuk dolazi iz cijele sobe, kao da je osoba stvarno pod morem. Ništa se ne mora raditi, dovoljno je biti tu. A kad osoba to poželi, soba odgovara na njezin pokret i glas.</p>
 
 <h2>Kako je složeno</h2>
-<figure class="fig"><img src="img/setup.jpg" srcset="img/setup-960.jpg 960w, img/setup.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Ista soba odozdo: projektori i osam malih zvučnika vise sa stropa, uz svaki zvučnik mobitel, pod je potpuno prazan" width="1600" height="900" onerror="this.remove()"><figcaption class="ph">Slika postava stiže uskoro</figcaption></figure>
-<p>Na podu nema ničega osim osobe. Sve visi sa stropa: uz svaki zid jedan ultrakratki laserski projektor okrenut naopako, koji baca sliku odozgo na zid, i osam malih zvučnika Adam Audio D3V u četiri para, također naopako, na stropnim nosačima s navojem. Uz svaki zvučnik je mobitel.</p>
-<p>Svaki par zvučnika spaja se na Mac Mini preko USB-a. USB ide kroz zid, mrežnim kabelom do utičnice na stropu. Mac Mini u macOS-u spaja sva četiri para u jednu veliku zvučnu karticu s osam kanala, pa svaki zvučnik dobiva svoj zvuk. Zvuk vodi Ableton Live, koji kišu, valove ili ribu koja prolazi može smjestiti u bilo koji kut sobe i polako ga pomicati. Isti Mac Mini šalje sliku na četiri projektora.</p>
+<figure class="fig"><img src="img/setup.jpg" srcset="img/setup-960.jpg 960w, img/setup.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Prazna soba odozdo: projektori i mali zvučnici vise sa stropa, uz zvučnike mobiteli, pod je potpuno prazan" width="1920" height="1072"></figure>
+<p>Na podu nema ničega osim ljudi. Sve visi sa stropa: uz svaki zid jedan ultrakratki laserski projektor okrenut naopako, koji baca sliku odozgo na zid, i osam malih zvučnika Adam Audio D3V u četiri para, također naopako, na stropnim nosačima s navojem. Uz svaki zvučnik je Android mobitel.</p>
+<p>Sve vodi jedan Mac mini M6 s 24 GB memorije i 512 GB prostora. Svaki par zvučnika spaja se na njega preko USB-a. Budući da je USB kabel dobar samo do pet metara, USB ide kroz zid mrežnim kabelom: uz Mac je mali odašiljač, na stropu prijemnik, a između njih do 50 metara kabela Cat.6. macOS spaja sva četiri para u jednu veliku zvučnu karticu s osam kanala, pa svaki zvučnik dobiva svoj zvuk. Zvuk vodi Ableton Live, koji kišu, valove ili ribu koja prolazi može smjestiti u bilo koji kut sobe i polako je pomicati.</p>
+<h3>Shema spajanja</h3>
+<div class="scheme card" role="img" aria-label="Shema spajanja: Mac mini u središtu; HDMI prema četiri projektora; USB preko mrežnog kabela prema četiri para zvučnika; Wi-Fi prema osam mobitela; USB prema 3D mikrofonu i zvučnoj kartici s četiri viseća mikrofona">
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="sf"/></marker></defs>
+<g class="ln hdmi"><path d="M450,250 L150,90"/><path d="M450,250 L330,60"/><path d="M450,250 L570,60"/><path d="M450,250 L750,90"/></g>
+<g class="ln usb"><path d="M410,300 L120,330"/><path d="M420,320 L230,440"/><path d="M480,320 L670,440"/><path d="M490,300 L780,330"/></g>
+<g class="ln wifi"><path d="M450,330 L450,410"/></g>
+<g class="ln usb"><path d="M400,270 L170,220"/><path d="M500,270 L730,220"/></g>
+<rect x="380" y="235" width="140" height="95" rx="14" class="box main"/><text x="450" y="275" class="t b">Mac mini M6</text><text x="450" y="296" class="t s">24 GB · 512 GB</text><text x="450" y="314" class="t s">Ableton · Skeleton</text>
+<g><rect x="80" y="62" width="140" height="44" rx="10" class="box"/><text x="150" y="88" class="t">Projektor 1</text></g>
+<g><rect x="260" y="32" width="140" height="44" rx="10" class="box"/><text x="330" y="58" class="t">Projektor 2</text></g>
+<g><rect x="500" y="32" width="140" height="44" rx="10" class="box"/><text x="570" y="58" class="t">Projektor 3</text></g>
+<g><rect x="680" y="62" width="140" height="44" rx="10" class="box"/><text x="750" y="88" class="t">Projektor 4</text></g>
+<text x="450" y="125" class="t s">HDMI optički kabel, 15 m (četvrti preko DisplayLinka)</text>
+<g><rect x="30" y="305" width="180" height="56" rx="10" class="box"/><text x="120" y="328" class="t">Par zvučnika 1</text><text x="120" y="347" class="t s">Adam D3V + mobitel</text></g>
+<g><rect x="140" y="425" width="180" height="56" rx="10" class="box"/><text x="230" y="448" class="t">Par zvučnika 2</text><text x="230" y="467" class="t s">Adam D3V + mobitel</text></g>
+<g><rect x="580" y="425" width="180" height="56" rx="10" class="box"/><text x="670" y="448" class="t">Par zvučnika 3</text><text x="670" y="467" class="t s">Adam D3V + mobitel</text></g>
+<g><rect x="690" y="305" width="180" height="56" rx="10" class="box"/><text x="780" y="328" class="t">Par zvučnika 4</text><text x="780" y="347" class="t s">Adam D3V + mobitel</text></g>
+<text x="450" y="500" class="t s">USB → mreža Cat.6 kroz zid → USB na stropu (Lindy)</text>
+<g><rect x="370" y="410" width="160" height="56" rx="10" class="box"/><text x="450" y="433" class="t">Wi-Fi na stropu</text><text x="450" y="452" class="t s">8 kamera mobitela</text></g>
+<g><rect x="60" y="195" width="150" height="50" rx="10" class="box"/><text x="135" y="216" class="t">3D mikrofon</text><text x="135" y="234" class="t s">Zylia, USB</text></g>
+<g><rect x="690" y="195" width="170" height="50" rx="10" class="box"/><text x="775" y="216" class="t">Zvučna kartica</text><text x="775" y="234" class="t s">4 viseća mikrofona</text></g>
+<g class="lg"><line x1="40" y1="525" x2="80" y2="525" class="ln hdmi"/><text x="88" y="530" class="t s l">slika (HDMI)</text>
+<line x1="230" y1="525" x2="270" y2="525" class="ln usb"/><text x="278" y="530" class="t s l">zvuk i mikrofoni (USB)</text>
+<line x1="470" y1="525" x2="510" y2="525" class="ln wifi"/><text x="518" y="530" class="t s l">kamere mobitela (Wi-Fi)</text></g>
+</svg></div>
+<p class="note">Mac mini M6 sam vodi tri zaslona (HDMI i dva Thunderbolt izlaza), pa četvrti projektor ide preko DisplayLink adaptera. HDMI optički kabeli rade samo u jednom smjeru i provlače se kroz zid zajedno s utikačima. Zvučnici, 3D mikrofon i zvučna kartica idu u USB hub s napajanjem jer Mac ima pet USB priključaka. Mobiteli šalju sliku kamere preko Wi-Fija, a pristupna točka je kabelom spojena na Mac. Uz svaki par zvučnika i uz svaki mobitel treba utičnica na stropu.</p>
 
 <h2>Mobitel uz svaki zvučnik</h2>
-<p>Mobitel uz zvučnik ima dvije uloge. Na ekranu pokazuje što taj zvučnik upravo svira, kao živi val zvuka, pa terapeut odmah vidi gdje je koji zvuk. A kamerom gleda u sobu. Osam kamera iz osam smjerova zna gdje je osoba, je li blizu ili daleko i kako joj stoji tijelo. Kad se osoba približi zvučniku, njegov zvuk se mijenja.</p>
+<figure class="pic"><img src="img/phone-detail.jpg" srcset="img/phone-detail-960.jpg 960w, img/phone-detail.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Mali crni zvučnik naopako na stropnom nosaču, uz njega mobitel u držaču koji na ekranu pokazuje živi val zvuka" width="1920" height="1072" loading="lazy"><figcaption>Mobitel pokazuje što zvučnik svira i kamerom gleda u sobu.</figcaption></figure>
 
-<h2>Pokret pokreće zvuk i sliku</h2>
-<figure class="fig"><img src="img/movement.jpg" srcset="img/movement-960.jpg 960w, img/movement.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Dijete na sredini sobe diže ruke, a na zidu svjetleći kostur ponavlja pokret dok oko njega plivaju ribe i kornjača" width="1600" height="900" onerror="this.remove()"><figcaption class="ph">Slika pokreta stiže uskoro</figcaption></figure>
-<p>Za to koristim svoju aplikaciju Skeleton. Ona na sliku osobe stavlja kostur od linija i točaka, istovremeno s četiri ili više kamera, a mobiteli mogu biti te kamere. Terapeut odabere pokret, na primjer obje ruke gore, ruke u stranu ili naginjanje u jednu stranu, i aplikacija ga prikaže kao prozirnu siluetu. Dijelovi tijela postaju zeleni kad se poklope. Kad osoba pogodi pokret i zadrži ga, dolazi nagrada: jato riba i kornjača doplivaju na zid, a zvuk zasvijetli, recimo zvono ili val. Razina se može podesiti, od vrlo blage za početak do točnije.</p>
-<p>Tako soba više nije samo za gledanje. Malo podignuta ruka može pokrenuti kišu, a okret glave može pozvati kita s druge strane sobe.</p>
+<p>Mobitel uz zvučnik ima dvije uloge. Na ekranu pokazuje što taj zvučnik upravo svira, kao živi val zvuka, pa terapeut odmah vidi gdje je koji zvuk. A kamerom gleda u sobu. Osam kamera iz osam smjerova zna gdje je osoba, je li blizu ili daleko i kako joj stoji tijelo. Kad se osoba približi zvučniku, njegov zvuk se mijenja: postaje bliži, topliji ili se pojavi nova životinja.</p>
+<div class="card"><h3 style="margin-top:0">Android ili iPhone?</h3>
+<p>Preporučujem Android. Na Androidu sam razvijam aplikacije i instaliram ih bez trgovine, Mac njima upravlja preko USB-a ili Wi-Fija (pokreće kameru, drži ekran upaljenim, mijenja postavke), a rabljeni Android s dobrom kamerom stoji oko 120 €. Moja aplikacija Skeleton već prima sliku s Android mobitela preko USB-a i Wi-Fija, četiri ili više odjednom. iPhone ima odličnu kameru, ali je skuplji, aplikacije idu samo kroz Appleovu trgovinu, a Mac ga kao kameru preko Continuityja koristi jedan po jedan.</p></div>
+
+<h2>Igra pokreta: opuštanje i aktivacija</h2>
+<figure class="pic"><img src="img/movement.jpg" srcset="img/movement-960.jpg 960w, img/movement.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Dijete na sredini sobe diže ruke, a na zidu svjetleći lik od linija ponavlja pokret dok oko njega plivaju ribe i kornjača" width="1920" height="1072" loading="lazy"><figcaption>Pogođen pokret: ribe i kornjača doplivaju kao nagrada.</figcaption></figure>
+<p>Za to koristim svoju aplikaciju <b>Skeleton</b>. Ona na sliku osobe stavlja kostur od linija i točaka, istovremeno s četiri ili više kamera, a mobiteli su te kamere. Terapeut odabere pokret, a aplikacija ga prikaže kao prozirnu siluetu. Dijelovi tijela postaju zeleni kad se poklope, a kad osoba pokret pogodi i zadrži ga, dolazi nagrada u slici i u zvuku. Težina se podešava, od vrlo blage za početak (velika tolerancija, kratko zadržavanje) do točnije.</p>
+<div class="gal"><figure class="pic"><img src="img/relax.jpg" srcset="img/relax-960.jpg 960w, img/relax.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Način opuštanja: dijete leži na mekanoj vreći usred tamnoplave sobe s meduzama, terapeutkinja sjedi uz njega" width="1920" height="1072" loading="lazy"><figcaption>Opuštanje: spore meduze, tamna voda, dah.</figcaption></figure><figure class="pic"><img src="img/activation.jpg" srcset="img/activation-960.jpg 960w, img/activation.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Način aktivacije: djeca dodiruju svjetleće krugove na zidu i iz njih izlaze jata riba" width="1920" height="1072" loading="lazy"><figcaption>Aktivacija: dohvati krug svjetla i pusti ribe.</figcaption></figure></div>
+<div class="grid2">
+<div class="card"><h3 style="margin-top:0">Opuštanje</h3><p>Pokreti su spori i mali: ruke se dižu s udahom i spuštaju s izdahom, glava se okreće prema zvuku. Slika je tamna i mirna, meduze i kitovi plivaju polako. Nagrada je nježna: zid zasvijetli toplije, kit zapjeva iz kuta sobe, kiša se utiša.</p></div>
+<div class="card"><h3 style="margin-top:0">Aktivacija</h3><p>Pokreti su veći i brži: ruke u zvijezdu, dohvatiti krug svjetla na zidu, nagnuti se, okrenuti se prema drugom zidu. Slika je svijetla i živa. Nagrada je vesela: jato riba proleti cijelom sobom, bubanj udari, mjehurići se razlete iz svih zvučnika.</p></div>
+</div>
+
+<h2>Pjevaj i dobij svoju pjesmu</h2>
+<figure class="pic"><img src="img/singing.jpg" srcset="img/singing-960.jpg 960w, img/singing.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Mladić u invalidskim kolicima sretno pjeva prema malom kuglastom mikrofonu koji visi sa stropa, terapeutkinja drži tablet" width="1920" height="1072" loading="lazy"><figcaption>Otpjevaj nekoliko taktova i pjesma se vrati cijela.</figcaption></figure>
+<p>Soba je i igralište s umjetnom inteligencijom. Osoba otpjeva nekoliko taktova ili samo melodiju u mikrofon, terapeut pritisne gumb, i za minutu iz svih zvučnika dođe cijela pjesma nastala iz te melodije. Za osobe s teškoćama to je velika nagrada: čuju svoj glas i svoju ideju kao pravu pjesmu.</p>
+<p>Za to služi <a href="https://suno.com" rel="noopener">Suno</a>. Snimka se učita u Suno (Upload audio), a Suno od nje napravi cijelu pjesmu (Cover ili Extend). Besplatni račun daje oko deset pjesama dnevno, bez prava na komercijalnu upotrebu, što je za osobnu nagradu dovoljno. Da pjesmu pjeva baš glas te osobe, Suno ima mogućnost Voices u plaćenom Pro paketu, a glas osoba mora sama potvrditi. Za djecu sve ide uz pristanak roditelja.</p>
+
+<h2>Snimanje u 3D</h2>
+<figure class="pic"><img src="img/microphones.jpg" srcset="img/microphones-960.jpg 960w, img/microphones.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Pogled prema stropu: u sredini visi mala kugla puna mikrofonskih kapsula, oko nje četiri tanka viseća mikrofona" width="1920" height="1072" loading="lazy"><figcaption>3D mikrofon u sredini i četiri viseća mikrofona.</figcaption></figure>
+<p>Soba je i studio za 3D snimanje. Sa stropa u sredini visi <b>Zylia</b>, jedna kugla s 19 mikrofona, spojena USB-om. Ona snima prostor u tri dimenzije, pa se sve što se u sobi dogodi, pjesma, bubnjanje u krugu ili glas terapeuta, može poslije reproducirati na osam zvučnika točno kako je zvučalo, sa svih strana. Uz nju četiri viseća kondenzatorska mikrofona snimaju glasove i instrumente izbliza.</p>
+
+<h2>Kad soba miruje: studio za nove vježbe</h2>
+<figure class="pic"><img src="img/claude-studio.jpg" srcset="img/claude-studio-960.jpg 960w, img/claude-studio.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Terapeutkinja stoji usred sobe i govori prema mikrofonu sa stropa, a na zidovima su skice poza, valova zvuka i boja" width="1920" height="1072" loading="lazy"><figcaption>Terapeut opisuje novu vježbu, a soba je izradi.</figcaption></figure>
+<p>Kad nema terapije, soba postaje radionica. Terapeut govori u mikrofon što bi trebalo: novu vježbu za ruke, novu zvučnu scenu sa šumom i pticama, novu igru za dvoje djece. Claude Code na Mac miniju to napiše i složi: nove poze za Skeleton, nove zvukove i slike za zidove. Za to treba pretplata Claude Max od oko 200 € mjesečno.</p>
 
 <h2>Oprema i softver</h2>
+<h3>Oprema</h3>
 <div class="tw"><table>
 <thead><tr><th>Stavka</th><th class="n">Kom.</th><th class="n">Cijena po kom.</th><th class="n">Ukupno</th><th>Gdje</th></tr></thead>
 <tbody>
-<tr><td>Apple Mac mini (M6)</td><td class="n">1</td><td class="n">1.049,00 €</td><td class="n">1.049,00 €</td><td><a href="https://www.apple.com/de/shop/buy-mac/mac-mini" rel="noopener">apple.com/de</a></td></tr>
-<tr><td>Optoma ZH430UST, ultrakratki laserski projektor (omjer 0,25:1), Full HD, 4.000 lumena</td><td class="n">4</td><td class="n">1.398,00 €</td><td class="n">5.592,00 €</td><td><a href="https://www.beamer-discount.de/en/products/optoma-zh430ust-beamer-mit-4-000-ansi-lumen-und-full-hd-dura-core" rel="noopener">beamer-discount.de</a></td></tr>
+<tr><td>Apple Mac mini M6, 24 GB memorije, 512 GB SSD<br><small class="note">cijena iz tiska, provjeriti u konfiguratoru</small></td><td class="n">1</td><td class="n">1.489,00 €</td><td class="n">1.489,00 €</td><td><a href="https://www.apple.com/de/shop/buy-mac/mac-mini" rel="noopener">apple.com/de</a></td></tr>
+<tr><td>Optoma ZH430UST, ultrakratki laserski projektor, Full HD, 4.000 lumena</td><td class="n">4</td><td class="n">1.398,00 €</td><td class="n">5.592,00 €</td><td><a href="https://www.beamer-discount.de/en/products/optoma-zh430ust-beamer-mit-4-000-ansi-lumen-und-full-hd-dura-core" rel="noopener">beamer-discount.de</a></td></tr>
 <tr><td>Optoma OWM3000, stropni nosač za ultrakratki projektor</td><td class="n">4</td><td class="n">107,73 €</td><td class="n">430,92 €</td><td><a href="https://www.office-partner.de/optoma-owm3000-projektorhalterung-fuer-ultrakurzdistanzgeraete-max.tragkraft-15kg-7853514" rel="noopener">office-partner.de</a></td></tr>
+<tr><td>pro snake AOC HDMI 15 m, optički HDMI kabel do projektora</td><td class="n">4</td><td class="n">69,00 €</td><td class="n">276,00 €</td><td><a href="https://www.thomann.de/de/pro_snake_aoc_hdmi_a_a_15m.htm" rel="noopener">Thomann</a></td></tr>
+<tr><td>DisplayLink USB-C na HDMI adapter za četvrti projektor (OWC Dual HDMI)<br><small class="note">cijena iz usporedbe cijena</small></td><td class="n">1</td><td class="n">97,90 €</td><td class="n">97,90 €</td><td><a href="https://www.owc.com/solutions/usb-c-dual-hdmi-4k-display-adapter" rel="noopener">OWC</a></td></tr>
 <tr><td>Adam Audio D3V, par aktivnih zvučnika s USB-C ulazom</td><td class="n">4</td><td class="n">259,00 €</td><td class="n">1.036,00 €</td><td><a href="https://www.thomann.de/de/adam_audio_d3v_black.htm" rel="noopener">Thomann</a></td></tr>
 <tr><td>Adam Audio D3V produžni kabel između zvučnika u paru</td><td class="n">4</td><td class="n">14,99 €</td><td class="n">59,96 €</td><td><a href="https://www.thomann.de/de/adam_audio_d3v_black.htm" rel="noopener">Thomann</a></td></tr>
 <tr><td>iriz CM550, stropni nosač s navojem 3/8" za zvučnik</td><td class="n">8</td><td class="n">46,00 €</td><td class="n">368,00 €</td><td><a href="https://www.thomann.de/de/iriz_cm550_adjustable_ceiling_mount.htm" rel="noopener">Thomann</a></td></tr>
 <tr><td>Lindy USB 2.0 preko mrežnog kabela Cat.6, do 50 m (USB kroz zid)</td><td class="n">4</td><td class="n">129,00 €</td><td class="n">516,00 €</td><td><a href="https://www.thomann.de/de/lindy_50m_usb_2_0_cat.6_extender.htm" rel="noopener">Thomann</a></td></tr>
+<tr><td>USB hub s napajanjem, 7 priključaka, za Mac mini</td><td class="n">1</td><td class="n">40,00 €</td><td class="n">40,00 €</td><td>procjena</td></tr>
+<tr><td>Android mobitel s kamerom uz svaki zvučnik (rabljeni Pixel ili sličan)</td><td class="n">8</td><td class="n">120,00 €</td><td class="n">960,00 €</td><td>procjena</td></tr>
 <tr><td>Godox MTH02, držač mobitela s navojem 1/4"</td><td class="n">8</td><td class="n">18,00 €</td><td class="n">144,00 €</td><td><a href="https://www.calumet.de/product/godox-mth02-smartphone-halterung" rel="noopener">calumet.de</a></td></tr>
-<tr><td>Mobitel s kamerom uz svaki zvučnik (rabljeni Android, procjena)</td><td class="n">8</td><td class="n">120,00 €</td><td class="n">960,00 €</td><td>procjena</td></tr>
-<tr><td>Ableton Live 12 Suite (s Max for Live), vodi svih osam zvučnika</td><td class="n">1</td><td class="n">479,00 €</td><td class="n">479,00 €</td><td><a href="https://www.thomann.de/de/ableton_live_12_suite.htm" rel="noopener">Thomann</a></td></tr>
-<tr><td>Envelop for Live, besplatni dodatak za prostorni zvuk na više zvučnika</td><td class="n">1</td><td class="n">0,00 €</td><td class="n">0,00 €</td><td><a href="https://www.envelop.us/software" rel="noopener">envelop.us</a></td></tr>
-<tr><td>Skeleton, moja aplikacija za praćenje pokreta s više kamera</td><td class="n">1</td><td class="n">0,00 €</td><td class="n">0,00 €</td><td>Marko Boško</td></tr>
+<tr><td>USB punjač za mobitel na stropu</td><td class="n">8</td><td class="n">10,00 €</td><td class="n">80,00 €</td><td>procjena</td></tr>
+<tr><td>Ubiquiti UniFi U7 Pro, Wi-Fi 7 pristupna točka na stropu<br><small class="note">cijena iz usporedbe cijena</small></td><td class="n">1</td><td class="n">190,00 €</td><td class="n">190,00 €</td><td><a href="https://preisvergleich.heise.de/ubiquiti-unifi-7-pro-u7-pro-a3096524.html" rel="noopener">heise.de</a></td></tr>
+<tr><td>Zylia ZM-2, 3D mikrofon s 19 kapsula u jednoj kugli, USB<br><small class="note">cjenik bez PDV-a, dostupnost na upit</small></td><td class="n">1</td><td class="n">1.625,20 €</td><td class="n">1.625,20 €</td><td><a href="https://shop.zylia.co/" rel="noopener">zylia.co</a></td></tr>
+<tr><td>Audio-Technica PRO 45, viseći kondenzatorski mikrofon</td><td class="n">4</td><td class="n">109,00 €</td><td class="n">436,00 €</td><td><a href="https://www.thomann.de/de/audio_technica_pro45_haengemikrofon.htm" rel="noopener">Thomann</a></td></tr>
+<tr><td>Behringer UMC404HD, USB zvučna kartica s 4 mikrofonska ulaza</td><td class="n">1</td><td class="n">95,00 €</td><td class="n">95,00 €</td><td><a href="https://www.thomann.de/de/behringer_umc404hd.htm" rel="noopener">Thomann</a></td></tr>
+<tr><td>Mrežni kabeli Cat.6 kroz zid, zidne utičnice i spojnice</td><td class="n">1</td><td class="n">150,00 €</td><td class="n">150,00 €</td><td>procjena</td></tr>
 </tbody>
-<tfoot><tr><td colspan="3">Procijenjeni ukupni iznos (cijene od 21.11.2026.)</td><td class="n">10.634,88 €</td><td></td></tr></tfoot>
+<tfoot><tr><td colspan="3">Oprema ukupno</td><td class="n">13.585,98 €</td><td></td></tr></tfoot>
 </table></div>
-<p class="note">Projektori vise naopako sa stropa uz svaki zid i bacaju sliku odozgo na zid s malo udaljenosti, pa nema sjena ljudi ni zrake u očima. Prije kupnje treba kod Optome potvrditi da ZH430UST radi okrenut naopako i da mu odgovara nosač OWM3000. Adam D3V ima navoj 3/8" s donje strane, pa se izravno navije na stropni nosač. Svaki zvučnik treba i sigurnosnu sajlu, a proizvođač ne navodi rad naopako, pa to treba potvrditi s Adamom. Godox ne radi stropne nosače, pa je umjesto stalka za rasvjetu odabran stropni nosač s istim navojem. Glavni zvučnik u svakom paru treba struju (24 V blok), kao i USB produžnik na stropu, pa uz svaki par treba utičnica na stropu. U iznos nisu uključeni HDMI kabeli do projektora, mrežni kabeli kroz zid, utičnice i ugradnja. Cijene uključuju PDV. Prije kupnje provjeri koliko zaslona odabrani Mac Mini može voditi odjednom, jer četiri projektora traže četiri izlaza.</p>
+<h3>Softver, jednokratno</h3>
+<div class="tw"><table>
+<thead><tr><th>Stavka</th><th class="n">Kom.</th><th class="n">Cijena</th><th class="n">Ukupno</th><th>Gdje</th></tr></thead>
+<tbody>
+<tr><td>Ableton Live 12 Suite (s Max for Live), vodi svih osam zvučnika</td><td class="n">1</td><td class="n">479,00 €</td><td class="n">479,00 €</td><td><a href="https://www.thomann.de/de/ableton_live_12_suite.htm" rel="noopener">Thomann</a></td></tr>
+<tr><td>Envelop for Live i IEM Plugin Suite, prostorni zvuk i 3D dekoderi<br><small class="note">besplatno</small></td><td class="n">1</td><td class="n">0,00 €</td><td class="n">0,00 €</td><td><a href="https://www.envelop.us/software" rel="noopener">envelop.us</a></td></tr>
+<tr><td>ZYLIA Studio, snimanje i pretvorba 3D zvuka<br><small class="note">uz mikrofon</small></td><td class="n">1</td><td class="n">0,00 €</td><td class="n">0,00 €</td><td><a href="https://www.zylia.co/" rel="noopener">zylia.co</a></td></tr>
+<tr><td>Skeleton, moja aplikacija za praćenje pokreta s više kamera<br><small class="note">besplatno</small></td><td class="n">1</td><td class="n">0,00 €</td><td class="n">0,00 €</td><td>Marko Boško</td></tr>
+<tr><td>MilkDrop vizualizacije (butterchurn)<br><small class="note">besplatno</small></td><td class="n">1</td><td class="n">0,00 €</td><td class="n">0,00 €</td><td><a href="https://butterchurnviz.com/" rel="noopener">butterchurn</a></td></tr>
+</tbody>
+<tfoot><tr><td colspan="3">Softver ukupno</td><td class="n">479,00 €</td><td></td></tr></tfoot>
+</table></div>
+<h3>Mjesečno i godišnje</h3>
+<div class="tw"><table>
+<thead><tr><th>Pretplata</th><th class="n">Mjesečno</th><th>Gdje</th></tr></thead>
+<tbody>
+<tr><td>Claude Max (Claude Code), studio u kojem nastaju nove vježbe<br><small class="note">200 $ mjesečno + PDV, oko 214 €</small></td><td class="n">214,00 €</td><td><a href="https://claude.com/pricing" rel="noopener">claude.com</a></td></tr>
+<tr><td>Suno, besplatni račun za svaku osobu (10 pjesama dnevno)<br><small class="note">Pro oko 10 $ mjesečno za vlastiti glas</small></td><td class="n">0,00 €</td><td><a href="https://suno.com/pricing" rel="noopener">suno.com</a></td></tr>
+<tr><td>myNoise, licenca za korištenje u terapijskoj sobi<br><small class="note">godišnja licenca, cijenu predlaže korisnik</small></td><td class="n">na upit</td><td><a href="https://mynoise.net/licensing.php" rel="noopener">mynoise.net</a></td></tr>
+<tr><td>YouTube, playlista DJ Mantra<br><small class="note">besplatno</small></td><td class="n">0,00 €</td><td><a href="https://www.youtube.com/" rel="noopener">youtube.com</a></td></tr>
+</tbody>
+<tfoot><tr><td>Mjesečno ukupno (bez licence za myNoise)</td><td class="n">214,00 €</td><td></td></tr></tfoot>
+</table></div>
+<p><b>Jednokratno ukupno: 14.064,98 €</b>, uz to oko 214,00 € mjesečno. Cijene su od 21.11.2026. i uključuju PDV, osim gdje piše drugačije.</p>
+<p class="note">Prije kupnje: kod Optome potvrditi da ZH430UST radi okrenut naopako i da mu odgovara nosač OWM3000. Adam D3V ima navoj 3/8" s donje strane i izravno se navije na stropni nosač; proizvođač ne navodi rad naopako, pa svaki zvučnik dobiva i sigurnosnu sajlu. Godox ne radi stropne nosače, pa je umjesto stalka za rasvjetu odabran stropni nosač s istim navojem. Zylia trenutno nema na zalihi u Njemačkoj, cijena je iz Zylijinog cjenika bez PDV-a. Stavke označene kao procjena nisu provjerene u trgovini. U iznos nisu uključene utičnice na stropu i ugradnja.</p>
+
+<h2>Svaram: Soundgarden i Sonorium</h2>
+<p>Dok sam živio u Aurovilleu, snimao sam filmove za <a href="https://svaram.org" rel="noopener">Svaram</a>, radionicu i istraživački centar za zvuk i instrumente. Njihova dva prostora su uzor za ovu sobu i bila bi prekrasno igralište za djecu s teškoćama: instrumenti koje dijete može dotaknuti, pokrenuti i osjetiti cijelim tijelom.</p>
+<h3>Soundgarden</h3>
+<figure class="pic nat"><img src="img/svaram/soundgarden-1.jpg" alt="Metalni ksilofon s velikim cijevima u zelenom vrtu Svarama" width="1600" height="534" loading="lazy"></figure>
+<div class="gal"><figure class="pic nat"><img src="img/svaram/soundgarden-2.jpg" alt="Djevojčica svira bambusova zvona u vrtu" width="738" height="880" loading="lazy"></figure><figure class="pic nat"><img src="img/svaram/soundgarden-3.jpg" alt="Djevojčica dlanom trlja okrugli plavi zvučni stol" width="800" height="878" loading="lazy"></figure></div>
+<p><a href="https://svaram.org/sound-garden-art-installations/" rel="noopener">Zvučni vrt</a> na otvorenom pun je instrumenata od kamena, bambusa, metala i drveta: kamenje koje zvoni, krug cijevnih zvona, zvučne ploče i bubanj oluje. Svatko može svirati, bez ikakvog znanja.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/GQyXzu90d0k" title="SVARAM Sound Garden, film Marka Boška" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3>Sonorium</h3>
+<figure class="pic nat"><img src="img/svaram/sonorium-2.jpg" alt="Terapeut uz drveni krevet s monokordom na kojem leži žena, oko njih viseća zvečka i cijevna zvona" width="1600" height="667" loading="lazy"></figure>
+<figure class="pic nat"><img src="img/svaram/sonorium-1.jpg" alt="Sonorium: krevet sa žicama, gongovi, cijevna zvona i zdjele" width="1600" height="534" loading="lazy"></figure>
+<div class="gal"><figure class="pic nat"><img src="img/svaram/sonorium-3.jpg" alt="Svirač udara veliku viseću zvučnu ploču dok žena leži na krevetu" width="738" height="880" loading="lazy"></figure><figure class="pic nat"><img src="img/svaram/sonorium-nidranantar.jpg" alt="Ruka prelazi preko žica Nidranantara, instrumenta za ležanje" width="738" height="880" loading="lazy"></figure></div>
+<p><a href="https://svaram.org/sonorium/" rel="noopener">Sonorium</a> je prostor za zvučno iscjeljivanje: veliki monokordi, gongovi i zvona postavljeni u krug, a u sredini Nidranantar, instrument na kojem se leži. Zvuk i vibracija prolaze kroz cijelo tijelo.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/78xD4G86daA" title="SVARAM Sonorium, film Marka Boška" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="note">Fotografije: Svaram, Auroville (svaram.org). Filmove sam snimio ja za Svaram. Više mojih filmova iz Aurovillea: <a href="https://youtube.com/playlist?list=PLcbk1jSryyxkAe66vLKVKnSPGOVB5PmB3" rel="noopener">Auroville Videos by Marko Bosko</a>.</p>
 </section>
 
 <section id="projekt-2">
 <h1>Soba za terapiju bojom i zvukom</h1>
-<p>Ista soba s četiri zida, ali ovaj put s drugom namjenom: boja i zvuk. Osnova joj je moja Mantra Room, a u njoj se slušaju tri vrste glazbe: moje mantre s vokalima, indijske pjesme i Hemi-Sync glazba.</p>
-
+<p>Ista soba s četiri zida, ali s drugom namjenom: boja, svjetlo i glazba. Osnova joj je moja Mantra Room. Na zidovima su spore boje i MilkDrop vizualizacije, a glazbu biraju terapeut i osoba zajedno.</p>
 <h2>Kako to izgleda</h2>
 <div class="gal"><figure class="pic"><img src="img/lifestyle-1.jpg" srcset="img/lifestyle-1-960.jpg 960w, img/lifestyle-1.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Djeca i terapeutkinja sjede na mekanoj prostirki u sobi s nježnim ljubičastim i plavim svjetlom" width="1920" height="1080" loading="lazy"><figcaption>Boje i mir: djeca na prostirci uz polagano mijenjanje boja.</figcaption></figure><figure class="pic"><img src="img/lifestyle-4.jpg" srcset="img/lifestyle-4-960.jpg 960w, img/lifestyle-4.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Odrasla osoba svira glinenu ocarinu, a pored nje sjedi terapeutkinja, dok zidovi prikazuju mirno more" width="1920" height="1080" loading="lazy"><figcaption>Sviranje glinene ocarine uz more na zidovima.</figcaption></figure></div>
-<h2>Što je BrainSync</h2>
-<div id="brainsync">
-<p>BrainSync je ovdje Hemi-Sync tehnologija. Hemi-Sync (skraćeno od engleskog hemispheric synchronization, sinkronizacija hemisfera) razvio je Robert Monroe, a prodaje se kao glazba s binauralnim ritmovima, namijenjena opuštanju i usmjeravanju pažnje. To su tvrdnje samih autora, a ne neovisna potvrda.</p>
-<p class="todo">Podrobnije objašnjenje stiže uskoro.</p>
+
+<h2>MilkDrop: moje vizualizacije na zidovima</h2>
+<figure class="pic"><img src="img/milkdrop.jpg" srcset="img/milkdrop-960.jpg 960w, img/milkdrop.jpg 1920w" sizes="(max-width:980px) 100vw, 940px" alt="Zidovi puni mekih tekućih uzoraka u ljubičastoj, tirkiznoj i jantarnoj boji, mladić u kolicima i prijatelj gledaju" width="1920" height="1072" loading="lazy"><figcaption>MilkDrop na sva četiri zida.</figcaption></figure>
+<p>MilkDrop je vizualizacija koja crta tekuće, žive slike iz glazbe. Koristim je u svojoj Mantra Room i ovdje: na četiri zida slika polako teče i mijenja se s glazbom. Za terapiju biram samo spore, nježne predloške, bez bljeskova. Ovo su četiri prava kadra iz MilkDropa:</p>
+<div class="gal4">
+<img src="img/milkdrop/milkdrop-1-800.jpg" alt="MilkDrop: plavo-zlatno nebo kao oblaci nad pustinjom" width="800" height="450" loading="lazy">
+<img src="img/milkdrop/milkdrop-2-800.jpg" alt="MilkDrop: ružičasto-zlatna mreža koja se njiše" width="800" height="450" loading="lazy">
+<img src="img/milkdrop/milkdrop-3-800.jpg" alt="MilkDrop: zeleni i tirkizni slojevi poput tekuće stijene" width="800" height="450" loading="lazy">
+<img src="img/milkdrop/milkdrop-4-800.jpg" alt="MilkDrop: valovite pruge u sedefastim bojama" width="800" height="450" loading="lazy">
 </div>
-<p class="note">Izvor: <a href="https://hemi-sync.com/" rel="noopener">hemi-sync.com</a> (službena stranica).</p>
+<p><button type="button" id="milk-start" class="btn big">Pokreni MilkDrop uz podvodni zvuk</button></p>
+<p class="note">Cijeli zaslon: MilkDrop crta sliku iz zvuka "Karipsko more", koji sam napravio za ovu sobu. Esc ili gumb Izlaz vraća na stranicu.</p>
 
-<h2>Slušaj uzorke</h2>
-<p>Tri mogućnosti: mantre s vokalima, indijske pjesme i Hemi-Sync glazba. Svaki uzorak traje jednu minutu.</p>
-<p>Ovo je uzorak iz aplikacije Hemi-Sync Flow: jednominutni isječci 22 instrumentalne skladbe, odabrane za opuštanje osoba s posebnim potrebama.</p>
-<div id="player" class="card"><p class="todo">Uzorci od jedne minute stižu uskoro.</p></div>
-<p><button type="button" id="therapy-start" class="btn big" disabled aria-disabled="true">Pokreni terapiju (demo)</button></p>
-<p class="note">Terapija na cijelom zaslonu: polagana slika mora i boja uz glazbu. Slika se mijenja vrlo sporo, bez bljeskova. Dodirom prikažeš kontrole, a tipka Esc ili gumb Izlaz vraća te na stranicu.</p>
+<h2>DJ Mantra: ambijentalna playlista</h2>
+<p>Za mirne trenutke u sobi složio sam playlistu mekane, ambijentalne glazbe: Chantress Seba, Nils Frahm, Trentemøller i još nekoliko tihih skladbi. Glazba se pušta s YouTubea, a u sobi se šalje na svih osam zvučnika.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/bfcl1JMGXdI?playlist=dIwwjy4slI8,hE_8C33gm7A,gRBg2d79Q8c,GFbkF_fsW24,SasKGA1hq9Y,0kYc55bXJFI,tgwBXJE-9sM,RpclSuABeRc,OlaTeXX3uH8,YFkKBfmSx5o,l0yRNQj2_tc,mqU0XsELBCA,UfcAVejslrU" title="DJ Mantra ambijentalna playlista" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+<ol class="tracks"><li><a href="https://www.youtube.com/watch?v=bfcl1JMGXdI" rel="noopener">Chantress Seba i Malte Marten – Song from the Forest</a></li><li><a href="https://www.youtube.com/watch?v=dIwwjy4slI8" rel="noopener">Nils Frahm – Says</a></li><li><a href="https://www.youtube.com/watch?v=hE_8C33gm7A" rel="noopener">Trentemøller – Miss You</a></li><li><a href="https://www.youtube.com/watch?v=gRBg2d79Q8c" rel="noopener">Chantress Seba – You Are Light</a></li><li><a href="https://www.youtube.com/watch?v=GFbkF_fsW24" rel="noopener">Nils Frahm – Ambre</a></li><li><a href="https://www.youtube.com/watch?v=SasKGA1hq9Y" rel="noopener">Trentemøller – Nightwalker</a></li><li><a href="https://www.youtube.com/watch?v=0kYc55bXJFI" rel="noopener">Ólafur Arnalds – Near Light</a></li><li><a href="https://www.youtube.com/watch?v=tgwBXJE-9sM" rel="noopener">Nils Frahm – Familiar</a></li><li><a href="https://www.youtube.com/watch?v=RpclSuABeRc" rel="noopener">Chantress Seba i Malte Marten – The Oracle</a></li><li><a href="https://www.youtube.com/watch?v=OlaTeXX3uH8" rel="noopener">Brian Eno – An Ending (Ascent)</a></li><li><a href="https://www.youtube.com/watch?v=YFkKBfmSx5o" rel="noopener">Nils Frahm – Sunson</a></li><li><a href="https://www.youtube.com/watch?v=l0yRNQj2_tc" rel="noopener">Hania Rani – Glass</a></li><li><a href="https://www.youtube.com/watch?v=mqU0XsELBCA" rel="noopener">Jon Hopkins – Abandon Window</a></li><li><a href="https://www.youtube.com/watch?v=UfcAVejslrU" rel="noopener">Marconi Union – Weightless</a></li></ol>
 
-<h2>Preporučeni albumi</h2>
-<p>Albumi Hemi-Sync glazbe na koje se, prema našem izboru, vrijedi usredotočiti u terapijama.</p>
-<div id="albums" class="grid"><p class="todo">Popis albuma stiže uskoro.</p></div>
-<p data-stores></p>
-
-<h2>Za Brigitu: aplikacija Hemi-Sync Flow</h2>
-<div class="card">
-<p>Draga Brigita, Hemi-Sync Flow je aplikacija za mobitel u kojoj je cijela Hemi-Sync glazba na jednom mjestu. Slušaš je po temama, kao što su opuštanje, san ili fokus, i svaka tema ima svoje seanse. Najjednostavnije je staviti slušalice, sjesti udobno i pustiti jednu seansu do kraja. U našoj sobi isti se zvuk može pustiti kroz zvučnike, dok boje i more plove po zidovima. Aplikacija se besplatno preuzima, a puni sadržaj dolazi uz pretplatu.</p>
-<p data-stores></p>
-<p><a class="btn off" href="https://hemi-sync.com/app/" rel="noopener">Hemi-Sync</a></p>
-</div>
-
-<h2>Alan Tower</h2>
-<div class="card">
-<p>Alan Tower je osoba koja je osmislila i stvorila aplikaciju Hemi-Sync Flow te je i danas organizira. Izrađuje i kristalna zvona Euphony (<a href="#euphony">više u nastavku</a>), a flautu Innato osmislio je zajedno s majstorom Hansom Houkesom (<a href="https://www.innato.us" rel="noopener">innato.us</a>).</p>
-</div>
+<h2>Zvučni pejzaži: myNoise</h2>
+<p>Za kišu, more, šumu i vjetar koristim <a href="https://mynoise.net" rel="noopener">myNoise</a>. Svaki pejzaž ima deset kanala koje mogu posebno podesiti i rasporediti po osam zvučnika: kapi kiše u kutovima, šum iz daljine sa stropa, dubina mora iz cijele sobe. Za korištenje u terapijskoj sobi myNoise traži godišnju licencu.</p>
+<p><a class="btn off" href="https://mynoise.net/NoiseMachines/rainNoiseGenerator.php" rel="noopener">Kiša</a> <a class="btn off" href="https://mynoise.net/NoiseMachines/oceanNoiseGenerator.php" rel="noopener">More</a> <a class="btn off" href="https://mynoise.net/NoiseMachines/rainforestNoiseGenerator.php" rel="noopener">Prašuma</a> <a class="btn off" href="https://mynoise.net/NoiseMachines/windNoiseGenerator.php" rel="noopener">Vjetar</a> <a class="btn off" href="https://mynoise.net/NoiseMachines/singingBowlsDroneGenerator.php" rel="noopener">Zdjele koje pjevaju</a></p>
 
 <section id="euphony">
 <h2>Preporuka za osoblje: Euphony Trio (kristalna zvona) – Alan Tower</h2>
@@ -133,6 +217,9 @@
 <div class="album"><b><a href="https://www.onetone.one/products/double-flute" rel="noopener">Double Flute</a></b><small>od 555 €</small><p>Dvije povezane pentatonske komore daju topao stereo zvuk: jedna strana za melodiju, druga za bordun. Ova poveznica vodi na preprodavača OneTone, a ne u Stonewhistleovu trgovinu; cijena je početna i ovisi o tonalitetu.</p></div>
 </div>
 <p class="note">Iskreno: flaute se rade po narudžbi i čeka se otprilike 3 do 5 mjeseci. Glina je lomljiva i čisti se samo suhom mekom krpom. Za sviranje je potreban dah. Ako dah nije moguć, dobra je alternativa bez daha <a href="#boric">veliki bubnjevi i radionica tresalica Marka Borića</a>. Prije narudžbe za osobe s posebnim potrebama preporučujemo upit proizvođaču.</p>
+<h3>Kako se sviraju ove flaute</h3>
+<p>Moj video: kako se sviraju glinene flaute Stonewhistle.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/qVSTpt1eESs" title="Kako se sviraju flaute Stonewhistle, video Marka Boška" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 </section>
 
 <h2>Preuzmi aplikacije</h2>
@@ -164,13 +251,9 @@
 
 <p class="note">Slike u ovoj stranici prikaz su zamišljene sobe i izrađene su umjetnom inteligencijom.</p>
 </main>
-<div id="tm" hidden role="dialog" aria-label="Terapija (demo)">
-<canvas id="tm-cv" aria-hidden="true"></canvas><div id="tm-col" hidden aria-hidden="true"></div>
-<div id="tm-ui">
-<div class="row"><button type="button" id="tm-x">✕ Izlaz</button><span><button type="button" data-mode="milk" aria-pressed="true">More i svjetlost</button> <button type="button" data-mode="col" aria-pressed="false">Boje čakri</button></span></div>
-<div><p id="tm-title" aria-live="polite"></p><div class="row mid"><button type="button" id="tm-prev" aria-label="Prethodna skladba">⏮</button><button type="button" id="tm-pp" aria-label="Pokreni">▶</button><button type="button" id="tm-next" aria-label="Sljedeća skladba">⏭</button></div></div>
-</div></div>
-<script src="player.js" defer></script>
+<div id="mk" hidden role="dialog" aria-label="MilkDrop"><canvas id="mk-cv" aria-hidden="true"></canvas><button type="button" id="mk-x">✕ Izlaz</button></div>
+<audio id="mk-au" src="audio/karipsko-more-underwater.mp3" preload="none" loop></audio>
+<script src="milk.js" defer></script>
 <script src="https://mantra-downloads.marko-bosko-925.workers.dev/counter.js" defer></script>
 </body>
 </html>

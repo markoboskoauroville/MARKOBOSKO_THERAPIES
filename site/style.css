@@ -58,3 +58,14 @@ footer{max-width:980px;margin:0 auto;padding:0 18px 40px;color:var(--mute);font-
 .pic{margin:0 0 16px}.pic img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block;background:#0a2a35}
 .pic figcaption{color:var(--mute);font-size:14px;margin-top:6px}
 .gal{display:grid;grid-template-columns:1fr;gap:14px}@media(min-width:700px){.gal{grid-template-columns:1fr 1fr}}
+/* phase 3 (21.11.2026) */
+.grid2{display:grid;gap:14px}@media(min-width:720px){.grid2{grid-template-columns:1fr 1fr}}
+.gal4{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.gal4 img{width:100%;height:auto;display:block;border-radius:10px}
+.scheme svg{width:100%;height:auto;display:block}
+.scheme .box{fill:var(--bg);stroke:var(--line);stroke-width:2}.scheme .box.main{stroke:var(--accent);stroke-width:2.5}
+.scheme .t{fill:var(--ink);font:600 15px system-ui,sans-serif;text-anchor:middle}.scheme .t.s{fill:var(--mute);font-weight:400;font-size:13px}.scheme .t.b{font-size:17px}.scheme .t.l{text-anchor:start}
+.scheme .ln{fill:none;stroke-width:2.5}.scheme .hdmi{stroke:#f2b84b}.scheme .usb{stroke:var(--accent)}.scheme .wifi{stroke:#c38cf2;stroke-dasharray:6 6}
+.tracks{columns:2 260px;font-size:15px;padding-left:22px}.tracks li{margin:2px 0}
+#mk{position:fixed;inset:0;z-index:50;background:#000}#mk canvas{width:100%;height:100%;display:block}
+#mk-x{position:absolute;top:16px;right:16px;font:600 16px system-ui,sans-serif;color:#fff;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:10px 16px;cursor:pointer}
+.pic.nat img{aspect-ratio:auto;object-fit:contain}
