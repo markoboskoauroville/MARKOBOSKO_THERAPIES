@@ -159,8 +159,8 @@ def heal(why):
 
 def check_capture():
     """Called while the track plays: a silent capture heals Screen Copy and asks for a redo."""
-    for _ in range(6):
-        if capture_level() > 0.0005:
+    for _ in range(8):
+        if capture_level() > 0.00001:      # a broken capture is exact digital zero; quiet passages are not
             return True
         time.sleep(1.5)
     heal('capture silent while the track plays')
