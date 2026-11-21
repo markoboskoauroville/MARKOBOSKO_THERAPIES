@@ -26,10 +26,10 @@ SERIAL = h.SER
 RMS_FLOOR = 0.002
 
 # The 10 full albums, in order. Swaps (voice or sudden loud passages) go to SWAPS in order.
-ALBUMS = ['Guitar Lullaby with Hemi-Sync', 'Dreamland', 'Cloudscapes', 'Meeresbrandung (Surf)', 'Enchanted Forest',
+ALBUMS = ['Guitar Lullaby with Hemi-Sync', 'Lullaby with Hemi-Sync', 'Cloudscapes', 'Meeresbrandung (Surf)', 'Enchanted Forest',
           'Pearl Moon', 'Path to Peace', 'Open Window', 'Cascade', 'Celestial Space']
-ALBUM_NOTES = {'Dreamland': 'swapped in for "Lullaby with Hemi-Sync" (judged voice-suspect)'}
-SWAPS = ['Midsummer Night', 'Music for Unwinding']
+ALBUM_NOTES = {}
+SWAPS = ['Dreamland', 'Midsummer Night', 'Music for Unwinding']
 # Clip-only candidates (12 needed), best first; voice-suspect ones are skipped automatically.
 CLIP_CANDIDATES = ['Desert Moon Song with Hemi-Sync', 'Himalayan Soul', 'Eternity Within', 'Galilean Moons', 'Oasis',
                    'Orbits of Hope', 'Reflections', 'Pachelbel Canon', 'Prisms', 'Portraits', 'Music for Rejuvenation',
@@ -131,9 +131,11 @@ def heal(why):
         sc('record', 'stop')
     except Exception:
         pass
-    pids = h.sh("ps -A -o PID,ARGS | grep scrcpy-server-mantra | grep -v grep | grep 'app_process / com' ").split()
-    for p in pids[:1]:
-        h.sh(f'kill {p}')
+    # Screen Copy's server is the app_process with audio=true (Marko's viewer runs audio=false); never the sh wrapper
+    for line in h.sh('ps -A -o PID,ARGS').splitlines():
+        parts = line.split(None, 1)
+        if len(parts) == 2 and parts[1].startswith('app_process / com.genymobile.scrcpy.Server') and 'audio=true' in parts[1]:
+            h.sh(f'kill {parts[0]}'); log('HEAL: killed scrcpy-server', parts[0])
     time.sleep(15)
     ok = False
     for _ in range(6):
@@ -302,6 +304,8 @@ def ensure_album_downloaded(name, timeout=1800):
 
 
 def save_artist(album_title, artist):
+    import html as _h
+    artist = _h.unescape(artist)
     for f in os.listdir(WORK):
         if f.endswith('.json'):
             try:
@@ -478,7 +482,8 @@ def run_clips(target=12, first_number=11):
         else:
             P.item('clip', name, status='failed' if r != 'voice' else 'swapped', note=r)
         P.set(clips={'done': count_clips()})
-        write_site_json()
+        publish()
+    publish(force=True)
     return done
 
 
@@ -643,9 +648,12 @@ def finish_album(info, lengths, want, prev=None):
             okay = False   # re-record once (coordinator, 21.11.2026)
         if s['len_s'] > 5:
             au.encode_track(seg, out, f'{WORK}/{slug(info["query"])}.jpg', t, artist, clean_album_name(info['album']), k, len(info['tracks']))
-        log('TRACK', info['album'], k, t, s, rep, 'want', L, 'dead2s', dead, 'OK' if okay else 'CHECK FAILED')
+        nw, heard = speech_words(seg) if s['len_s'] > 25 else (0, '')
+        if nw > 6:
+            notify(f'SPEECH? {info["album"]} track {k} {t}: {heard}')
+        log('TRACK', info['album'], k, t, s, rep, 'want', L, 'dead2s', dead, 'speech words', nw, repr(heard)[:60], 'OK' if okay else 'CHECK FAILED')
         res[k] = {'title': t, 'ok': okay, 'len_s': s['len_s'], 'length': L, 'rms': s['rms'], 'gaps': rep.get('gaps_removed', 0),
-                  'gap_ms': int(rep.get('gap_s', 0) * 1000), 'attempts': attempts, 'heavy': heavy}
+                  'gap_ms': int(rep.get('gap_s', 0) * 1000), 'attempts': attempts, 'heavy': heavy, 'speech_words': nw}
         if okay:
             os.remove(wav_for(f'rec {slug(info["album"])} {k:02d}'))
     return res
@@ -755,8 +763,60 @@ def run_albums(only=None):
             if errs[name] >= 3:
                 P.item('album', name, status='failed', note=repr(e)[:120]); idx += 1
         P.set(clips={'done': count_clips()})
-        write_site_json()
+        publish(force=True)
     P.set(albums={'done': done})
+
+
+PUBLISHED = [None]
+
+
+def publish(force=False):
+    """Every 4 new clips (and at the end): site json, artist tags, commit, push, deploy, check one MP3 live."""
+    n = count_clips()
+    if PUBLISHED[0] is None:
+        PUBLISHED[0] = n if not force else -1
+    if not force and n - PUBLISHED[0] < 4:
+        return
+    try:
+        subprocess.run(['python3', 'hsretag.py'], cwd=os.path.dirname(os.path.abspath(__file__)), capture_output=True, timeout=600)
+        subprocess.run(['python3', 'hssite.py'], cwd=os.path.dirname(os.path.abspath(__file__)), capture_output=True, timeout=120)
+        g = lambda *a: subprocess.run(['git'] + list(a), cwd=REPO, capture_output=True, text=True, timeout=300)
+        g('add', 'site/audio/samples.json', 'site/audio/albums.json', 'site/audio/albums')
+        subprocess.run('git add site/audio/*.mp3', shell=True, cwd=REPO)
+        g('commit', '-m', f'Audio: {n} of 22 Hemi-Sync one-minute clips ({time.strftime("%d.%m.%Y")})\n\n'
+          'Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\n'
+          'Claude-Session: https://claude.ai/code/session_01NceKU9CD57DmmcThDwnk3v')
+        g('pull', '--rebase', '-q'); g('push', '-q', 'origin', 'main')
+        d = subprocess.run('ACCESS_ON=1 bash deploy.sh', shell=True, cwd=REPO, capture_output=True, text=True, timeout=900)
+        newest = sorted(f for f in os.listdir(SITE) if f.endswith('.mp3'))[-1]
+        code = subprocess.run(['curl', '-s', '-o', '/dev/null', '-w', '%{http_code}', '--max-time', '30', '--resolve',
+                               'therapies.markobosko.org:443:104.21.27.25', f'https://therapies.markobosko.org/audio/{newest}'],
+                              capture_output=True, text=True).stdout
+        log('PUBLISHED', n, 'clips; deploy rc', d.returncode, newest, 'HTTP', code)
+        notify(f'PUBLISHED {n} clips, {newest} HTTP {code}')
+        PUBLISHED[0] = n
+    except Exception as e:
+        log('publish failed', repr(e))
+
+
+HALLU = re.compile(r"sous-titrage|thank you|thanks for watching|subtitles|amara|\bmfp\b|\bmusic\b|♪|\.\.\.", re.I)
+
+
+def speech_words(seg):
+    """Local Whisper (MANTRA_VOICE :8837/hear, offline) on 20 s from the middle: words that are not the usual
+    music hallucinations. 0 = no speech heard."""
+    import tempfile, urllib.request
+    try:
+        m = len(seg) // 2; part = seg[max(0, m - 10 * au.SR): m + 10 * au.SR]
+        with tempfile.TemporaryDirectory() as td:
+            w = os.path.join(td, 'v.wav'); au.save(part, w)
+            data = open(w, 'rb').read()
+        req = urllib.request.Request('http://127.0.0.1:8837/hear?lang=auto', data=data, headers={'Content-Type': 'audio/wav'})
+        txt = json.loads(urllib.request.urlopen(req, timeout=180).read()).get('text', '')
+        words = [x for x in re.findall(r"[\w']+", HALLU.sub(' ', txt)) if len(x) > 1]
+        return len(words), txt[:120]
+    except Exception as e:
+        return -1, repr(e)[:80]
 
 
 def notify(line):

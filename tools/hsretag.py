@@ -3,15 +3,19 @@ The artist comes from the app's Downloads list (read when the download is delete
 import json, os, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from hsrun import WORK, SITE, MUSIC, album_dir, clean_album_name
+from hssite import clean_artist, clean_title
 
 
-def tag(path, artist):
-    cur = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format_tags=artist', '-of', 'csv=p=0', path],
-                         capture_output=True, text=True).stdout.strip()
-    if cur == artist:
+def tag(path, artist, title=None):
+    cur = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format_tags=artist,title', '-of', 'json', path],
+                         capture_output=True, text=True).stdout
+    tags = {k.lower(): v for k, v in (json.loads(cur or '{}').get('format', {}).get('tags', {}) or {}).items()}
+    if tags.get('artist') == artist and (not title or tags.get('title') == title):
         return False
     tmp = path + '.tmp' + os.path.splitext(path)[1]
     cmd = ['ffmpeg', '-y', '-loglevel', 'error', '-i', path, '-map', '0', '-c', 'copy', '-metadata', f'artist={artist}']
+    if title:
+        cmd += ['-metadata', f'title={title}']
     if path.endswith('.m4a'):
         cmd += ['-metadata', f'album_artist={artist}', '-disposition:v', 'attached_pic']
     else:
@@ -27,11 +31,11 @@ for f in sorted(os.listdir(WORK)):
     if not f.endswith('.json'):
         continue
     m = json.load(open(f'{WORK}/{f}'))
-    a = m.get('artist')
+    a = clean_artist(m.get('artist'))
     if not a:
         continue
     if m.get('clip_file') and os.path.exists(f'{SITE}/{m["clip_file"]}'):
-        if tag(f'{SITE}/{m["clip_file"]}', a):
+        if tag(f'{SITE}/{m["clip_file"]}', a, clean_title(m.get('clip_track'), clean_album_name(m['album']), len(m['tracks']))):
             print('clip', m['clip_file'], '->', a)
     d = album_dir(m)
     if os.path.isdir(d):

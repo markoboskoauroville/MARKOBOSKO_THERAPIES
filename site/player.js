@@ -39,7 +39,8 @@
   P.audio.volume = 1;
 
   const say = t => { box.innerHTML = '<p class="todo">' + t + '</p>'; };
-  const tr = t => ({title: t.title || t.name || t.file, file: t.file || t.src || t.url, sub: t.artist || t.sub || ''});
+  const tr = t => ({title: t.title || t.name || t.file, file: t.file || t.src || t.url, sub: t.artist || t.sub || '',
+    label: (t.n ? String(t.n).padStart(2, '0') + '. ' : '') + (t.title || t.name || t.file) + ((t.artist || t.sub) ? ' · ' + (t.artist || t.sub) : '')});
   (async () => {
     let data;
     try { const r = await fetch('audio/samples.json', {cache: 'no-cache'}); if (!r.ok) throw 0; data = await r.json(); }
@@ -62,7 +63,7 @@
         const idx = P.tracks.indexOf(t), row = document.createElement('div'); row.className = 'trk';
         const b = document.createElement('button'); b.type = 'button'; b.dataset.idx = idx; b.setAttribute('aria-label', 'Slušaj: ' + t.title);
         const d = document.createElement('div'); d.className = 't'; d.innerHTML = '<b></b><small></small>';
-        d.firstChild.textContent = t.title; d.lastChild.textContent = t.sub || 'uzorak od jedne minute';
+        d.firstChild.textContent = t.label; d.lastChild.textContent = '';
         b.onclick = () => P.i === idx ? P.toggle() : P.play(idx);
         row.append(b, d); list.append(row);
       }); mark();
@@ -111,7 +112,7 @@
       auto = setInterval(() => { viz.ix = (viz.ix + 1) % viz.keys.length; viz.loadPreset(viz.all[viz.keys[viz.ix]], 6); }, 40000);
     });
   }
-  function names() { const t = P.tracks[P.i]; title.textContent = t ? t.title : 'Pritisni ▶ za početak'; pp.textContent = P.audio.paused ? '▶' : '❚❚'; pp.setAttribute('aria-label', P.audio.paused ? 'Pokreni' : 'Pauziraj'); }
+  function names() { const t = P.tracks[P.i]; title.textContent = t ? t.label : 'Pritisni ▶ za početak'; pp.textContent = P.audio.paused ? '▶' : '❚❚'; pp.setAttribute('aria-label', P.audio.paused ? 'Pokreni' : 'Pauziraj'); }
   P.listeners.push(names);
   function wake() { ui.classList.remove('off'); clearTimeout(hideT); hideT = setTimeout(() => ui.classList.add('off'), 4000); }
   function openTm() {
