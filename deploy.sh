@@ -1,14 +1,18 @@
 #!/bin/bash
-# deploy.sh: Marko Bosko Therapies -> Cloudflare Pages project markoboskotherapies, from the Mac.
+# deploy.sh: Marko Bosko Therapies -> Cloudflare Pages project markoboskotherapies, from a cloud session or the Mac.
 # Only `wrangler pages deploy` (never `wrangler deploy`, no wrangler.jsonc, no Worker). The project must already exist.
 # The token is read from ~/Downloads/API for the deploy only, never printed.
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
 PROJECT=${PROJECT:-markoboskotherapies}
-export CLOUDFLARE_ACCOUNT_ID=$(python3 -c "
+# Cloud sessions (21.11.2026: the project is cloud + VM only) have CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID in the
+# environment; on the Mac they are read from ~/Downloads/API/Cloudflare.api.txt.
+if [ -z "${CLOUDFLARE_API_TOKEN:-}" ]; then
+  export CLOUDFLARE_ACCOUNT_ID=$(python3 -c "
 import re,os; raw=open(os.path.expanduser('~/Downloads/API/Cloudflare.api.txt')).read(); m=re.findall(r'dash\.cloudflare\.com/([0-9a-f]{32})', raw); print(m[0] if m else 'b9255970e1438e7e5c4446260c6a320d')")
-export CLOUDFLARE_API_TOKEN=$(python3 -c "
+  export CLOUDFLARE_API_TOKEN=$(python3 -c "
 import re,os; raw=open(os.path.expanduser('~/Downloads/API/Cloudflare.api.txt')).read(); print([l.strip() for l in raw.splitlines() if re.fullmatch(r'[A-Za-z0-9_\-]{30,}', l.strip())][-1])")
+fi
 cd "$HERE"
 # confirm the project exists first; stop if it does not
 npx --yes wrangler pages project list 2>/dev/null | grep -q " $PROJECT " || { echo "Pages project $PROJECT not found: stop"; exit 1; }

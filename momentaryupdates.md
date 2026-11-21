@@ -18,3 +18,12 @@ Correction 21.11.2026: Alan Watts / Alan Tower = Alan Tauer.
 
 ## 21.11.2026, Marko's decisions
 No donation bowl on this site (Marko, 21.11.2026).
+
+## 21.11.2026, Marko (verbatim, dictated), new room setup
+
+"Now the whole project is going to be in cloud only and in virtual machine if you need to do some something from there. We are changing the setup for speakers. There will be Adam Audio D3V as speakers. We need to have four pairs of them and there must be cabling so there must be some kind of USB extension in the wall so everything is connected via USB and it's going to make Mini and Mac Mini aggregates all these speakers in one big sound card and send it sound separately. Since this speaker can be screwed on a light stand, find the appropriate Godox light stand with top screw and we just screw it at the top and there's the stand. And on each speaker there will be a phone connected to read and see what this actually speaker is producing. And Mac is of course also making images on the short-row laser projectors. And laser projectors are going from the ceiling down, they are not on the floor. And nothing is on the floor, even these speakers are upside down and these light stands are attached to the ceiling."
+
+"Add also cost. We need all costs for software and software is Abertol Live who is driving all these speakers. Each phone is also can be a visual sensor so when user come close to it it change the sound so it can by its camera really assess the position ... my application which has four cameras or more to capture the the movement of people ... suggest the application which is like a skeleton is attached to the person ... And the certain movements which need to be matched. Then when the movement is matched, there is a reward on the screen or in the sound."
+
+Read as: "Abertol Live" = Ableton Live; "short-row" = short-throw; the skeleton app = Marko's own Skeleton (Mantra), repo SKELETON (Apple Vision, multi-camera, phones as cameras, pose matching with reward).
+Done: project 1 rewritten (ceiling-only installation, 4× Adam D3V pairs over USB-over-Cat6 into a macOS Aggregate Device, Ableton Live 12 Suite + Envelop for Live, phone per speaker, Skeleton movement section, new table). Godox makes no ceiling mount, so the iriz CM550 ceiling mount (3/8" spigot) replaces the light stand; told Marko.

@@ -18,7 +18,7 @@ stock. Until they exist the page shows a neutral placeholder. The prompts are in
 Chrome profiles there must be signed in to Gemini first). Publish them as JPEG 1600 px wide into site/img/ and run deploy.sh.
 The worker script on the VM was patched on 21.11.2026 (skips `paste_files` when a batch has no reference images); the original is /tmp/gemini-worker.bak there.
 
-**Deploy.** `bash deploy.sh` (wrangler from the Mac, `wrangler pages deploy` only, never `wrangler deploy`, no wrangler.jsonc, no Worker).
+**Deploy.** `bash deploy.sh` (since 21.11.2026 the project is cloud + VM only: cloud sessions have CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID in their environment; the Mac fallback still reads ~/Downloads/API; `wrangler pages deploy` only, never `wrangler deploy`, no wrangler.jsonc, no Worker).
 It stops if the Pages project does not exist. The token is read from ~/Downloads/API/Cloudflare.api.txt and never printed.
 The repo is public and unpromoted: no README, no description.
 
@@ -29,3 +29,10 @@ The repo is public and unpromoted: no README, no description.
 - "BrainSync" text is from hemi-sync.com facts only; replace with BRAINSYNC.md facts when delivered.
 - DJ Mantra's players are inline code in its single index.html, not a module file, so this site has its own player.js.
 - /admin (21.11.2026): "Alan Tower – javni radovi" is in `admin_pending/admin/index.html`, NOT in `site/`, because Cloudflare Zero Trust Access is not enabled on the account (API: access.api.error.not_enabled). `deploy.sh` copies it only with `ACCESS_ON=1`, after an Access app for `markoboskotherapies.pages.dev/admin*` (allow marko.bosko@auroville.community and marko.bosko@gmail.com, One-time PIN) exists. robots.txt disallows /admin; sitemap lists only `/`.
+
+**Project 1, new setup (21.11.2026, momentaryupdates.md).** Nothing on the floor: 4 Optoma UST lasers upside down on OWM3000 ceiling
+mounts, 8 Adam Audio D3V (4 pairs, 3/8" thread) upside down on iriz CM550 ceiling mounts, each pair over Lindy USB-over-Cat6 to the
+Mac mini, macOS Aggregate Device (8 ch, drift correction), Ableton Live 12 Suite + Envelop for Live. A phone beside each speaker
+(Godox MTH02 holder) shows that speaker's sound and is a camera for Skeleton (repo SKELETON, pose match + reward). New pictures: Drive
+batch `Gemini/_batch/batch-markobosko-therapies-ceiling.json` → `Gemini/markobosko-therapies-ceiling/{room,setup,movement}.png`.
+Open checks: ZH430UST inverted mode + OWM3000 fit (Optoma), D3V inverted use (Adam), ceiling power at each pair.
