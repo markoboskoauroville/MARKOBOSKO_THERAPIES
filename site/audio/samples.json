@@ -1,66 +1,122 @@
 [
  {
-  "file": "11-himalayan-soul.mp3",
+  "n": 1,
+  "file": "01-himalayan-soul.mp3",
   "title": "Himalayan Soul",
   "album": "Himalayan Soul",
   "artist": "Ilona Selke and Don Paris",
-  "category": "Uzorci",
-  "reason": ""
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Meditation",
+  "reason": "Flauta, mirna i topla."
  },
  {
-  "file": "12-eternity-within.mp3",
+  "n": 2,
+  "file": "02-eternity-within.mp3",
   "title": "Eternity Within",
   "album": "Eternity Within",
   "artist": "Frank Danna",
-  "category": "Uzorci",
-  "reason": ""
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Meditation",
+  "reason": "Prostran, miran ambijent."
  },
  {
-  "file": "13-galilean-moons.mp3",
-  "title": "1 Io",
+  "n": 3,
+  "file": "03-galilean-moons.mp3",
+  "title": "Galilean Moons: Io",
   "album": "Galilean Moons",
   "artist": "Rob Dobson",
-  "category": "Uzorci",
-  "reason": ""
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Creativity",
+  "reason": "Sporo, lebdeće, bez ritma."
  },
  {
-  "file": "14-oasis.mp3",
+  "n": 4,
+  "file": "04-oasis.mp3",
   "title": "Oasis",
   "album": "Oasis",
   "artist": "Andrzej Rejman",
-  "category": "Uzorci",
-  "reason": ""
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Reduce Stress",
+  "reason": "Klavir i gudači, toplo."
  },
  {
-  "file": "15-orbits-of-hope.mp3",
+  "n": 5,
+  "file": "05-orbits-of-hope.mp3",
   "title": "Orbits of Hope",
   "album": "Orbits of Hope",
-  "artist": "Micah Sadigh, Ph.D.",
-  "category": "Uzorci",
+  "artist": "Micah Sadigh",
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Creativity",
   "reason": ""
  },
  {
-  "file": "16-reflections.mp3",
+  "n": 6,
+  "file": "06-reflections.mp3",
   "title": "Reflections",
   "album": "Reflections",
   "artist": "Rick Borgia",
-  "category": "Uzorci",
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Enhanced Well-Being",
   "reason": ""
  },
  {
-  "file": "17-pachelbel-canon.mp3",
-  "title": "01 Pachelbel Canon in D extended",
+  "n": 7,
+  "file": "07-pachelbel-canon.mp3",
+  "title": "Pachelbel Canon in D",
   "album": "Pachelbel Canon",
-  "artist": "Johanne Pachelbel",
-  "category": "Uzorci",
+  "artist": "Johann Pachelbel",
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Creativity",
   "reason": ""
  },
  {
-  "file": "18-prisms.mp3",
+  "n": 8,
+  "file": "08-prisms.mp3",
   "title": "Prisms",
   "album": "Prisms",
-  "artist": "Lenore Paxton &amp; Phillip Siadi",
-  "category": "Uzorci",
+  "artist": "Lenore Paxton & Phillip Siadi",
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Creativity",
+  "reason": ""
+ },
+ {
+  "n": 9,
+  "file": "09-portraits.mp3",
+  "title": "Portraits",
+  "album": "Portraits",
+  "artist": "Lenore Paxton & Phillip Siadi",
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Reduce Stress",
+  "reason": ""
+ },
+ {
+  "n": 10,
+  "file": "10-music-for-rejuvenation.mp3",
+  "title": "Music for Rejuvenation: Chronos",
+  "album": "Music for Rejuvenation",
+  "artist": "Hemi-Sync",
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Enhanced Well-Being",
+  "reason": ""
+ },
+ {
+  "n": 11,
+  "file": "11-komuso.mp3",
+  "title": "Betsuden Echigo Sanya",
+  "album": "Komuso",
+  "artist": "Hemi-Sync",
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Enhanced Well-Being",
+  "reason": ""
+ },
+ {
+  "n": 12,
+  "file": "12-masterworks.mp3",
+  "title": "Masterworks",
+  "album": "Masterworks",
+  "artist": "Arcangelos Chamber Ensemble",
+  "category": "Hemi-Sync uzorci",
+  "category_in_app": "Meditation",
   "reason": ""
  }
 ]
