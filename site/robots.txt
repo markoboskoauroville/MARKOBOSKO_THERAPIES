@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /admin/
-Sitemap: https://markoboskotherapies.pages.dev/sitemap.xml
+Sitemap: https://therapies.markobosko.org/sitemap.xml
