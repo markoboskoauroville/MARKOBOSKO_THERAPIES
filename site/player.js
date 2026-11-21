@@ -26,13 +26,17 @@
   const $ = id => document.getElementById(id);
   const box = $('player'); if (!box) return;
   const P = window.Therapy = {tracks: [], groups: [], i: -1, audio: new Audio(), listeners: []};
-  P.audio.preload = 'none';
+  P.audio.preload = 'none'; P.audio.muted = false; P.audio.volume = 1;
+  // iPhone/Safari: sound as "playback", so the mute switch and an unconnected WebAudio context (MilkDrop) cannot silence the music
+  try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) {}
   const tell = () => P.listeners.forEach(f => f());
   P.src = t => 'audio/' + t.file.replace(/^\/?audio\//, '');
   P.play = i => { if (!P.tracks.length) return; P.i = (i + P.tracks.length) % P.tracks.length; P.audio.src = P.src(P.tracks[P.i]); P.audio.play().catch(() => {}); tell(); };
   P.toggle = () => { if (P.i < 0) P.play(0); else if (P.audio.paused) P.audio.play().catch(() => {}); else P.audio.pause(); tell(); };
   P.audio.onended = () => P.play(P.i + 1);
   P.audio.onplay = P.audio.onpause = tell;
+  P.audio.onerror = () => { const n = document.getElementById('tm-title'); const m = 'Zvuk se ne može učitati. Pokušaj ponovno ili odaberi drugu skladbu.'; if (n) n.textContent = m; };
+  P.audio.volume = 1;
 
   const say = t => { box.innerHTML = '<p class="todo">' + t + '</p>'; };
   const tr = t => ({title: t.title || t.name || t.file, file: t.file || t.src || t.url, sub: t.artist || t.sub || ''});
