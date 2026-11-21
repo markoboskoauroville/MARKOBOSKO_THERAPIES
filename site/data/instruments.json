@@ -1,0 +1,57 @@
+{
+  "maker": "Stonewhistle (Hans Houkes, Netherlands)",
+  "maker_url": "https://stonewhistle.com/",
+  "verified": true,
+  "notes": "Shop: stonewhistle.myshopify.com, prices in EUR (shop currency EUR). Made to order, wait about 3-5 months. Clay, fragile; clean with dry soft cloth only. Maker offers no breath-free instruments. FAQ says nothing on disability suitability: ask info@stonewhistle.com first.",
+  "items": [
+    {
+      "name": "Natey A4 (pocket flute)",
+      "url": "https://stonewhistle.myshopify.com/products/natey-am4",
+      "price_eur": 130,
+      "why_en": "A small, light clay flute that plays a gentle minor pentatonic-style scale where no note sounds wrong, easy to hold with one hand and sounded with a soft breath.",
+      "image_url": "https://cdn.shopify.com/s/files/1/0767/7041/0827/files/IMG_0351.png?v=1731911266"
+    },
+    {
+      "name": "Natey E4",
+      "url": "https://stonewhistle.myshopify.com/products/natey-em4",
+      "price_eur": 165,
+      "why_en": "Same simple and forgiving Natey design in a slightly deeper voice, no experience needed, with a protective travel case.",
+      "image_url": "https://cdn.shopify.com/s/files/1/0767/7041/0827/files/IMG_0351.png?v=1731911266"
+    },
+    {
+      "name": "ZEN flute Medium",
+      "url": "https://stonewhistle.myshopify.com/products/zen-flute-medium",
+      "price_eur": 150,
+      "why_en": "Pentatonic scale of five notes plus the octave, any combination of holes sounds harmonious, played with one slow soft sigh, so almost no technique is needed.",
+      "image_url": "https://cdn.shopify.com/s/files/1/0767/7041/0827/files/ZENFluteMediumSmokefiredRed.png?v=1731918006"
+    },
+    {
+      "name": "ZEN flute Large",
+      "url": "https://stonewhistle.myshopify.com/products/zen-flute-large",
+      "price_eur": 170,
+      "why_en": "The same ZEN flute in the larger size, lower pitch and more room for bigger or less precise hands.",
+      "image_url": "https://cdn.shopify.com/s/files/1/0767/7041/0827/files/ZENFluteMediumSmokefiredRed.png?v=1731918006"
+    },
+    {
+      "name": "Innato Mini C5",
+      "url": "https://stonewhistle.myshopify.com/products/innato-mini-dm5",
+      "price_eur": 350,
+      "why_en": "A small three-chamber flute where every finger combination gives a pleasant three-note chord, so it cannot be played wrong, and it is light (100 g).",
+      "image_url": "https://cdn.shopify.com/s/files/1/0767/7041/0827/files/Innato_Blue_-_Red_Gold_Bubble.png?v=1731908863"
+    },
+    {
+      "name": "Innato E4",
+      "url": "https://stonewhistle.myshopify.com/products/innato-em4",
+      "price_eur": 675,
+      "why_en": "The full-size three-chamber chord flute, intuitive for anyone, both hands hold it, every combination of fingers sounds beautiful.",
+      "image_url": "https://cdn.shopify.com/s/files/1/0767/7041/0827/files/Innato_Blue_-_Red_Gold_Bubble.png?v=1731908863"
+    },
+    {
+      "name": "Double Flute (via reseller OneTone, not in Stonewhistle's own shop feed)",
+      "url": "https://www.onetone.one/products/double-flute",
+      "price_eur": 555,
+      "why_en": "Two linked pentatonic chambers give a warm stereo sound, one side for melody and one for drone; price is from the reseller's from-price and may vary by key.",
+      "image_url": "https://cdn.shopify.com/s/files/1/0736/5135/5833/files/ddb4c6c2-027ae1_5839105151fe4d0e9da4f52db33c26d5_mv2.webp?v=1761726661"
+    }
+  ]
+}
