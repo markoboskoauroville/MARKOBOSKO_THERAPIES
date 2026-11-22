@@ -17,3 +17,5 @@
 **Round 3: pictures accepted (22.11.2026).** Round 1 (6 of 10): text section only, small Mac-captured draft, blank screenshots. Round 2: VM Gemini worker made A, B, C at native 1024x572; A accepted on the 2nd try (first had a garbled logo), B and C rejected for the device twice its size and invented wall objects. Round 3: prompts state the size against a hand with a hand photo as reference; B and C accepted by the master and published with A, plus an AI-illustration caption.
 
 **Round 3: 9 of 10 (stray screenshot), round 4: 10.** Lesson: screenshots go to the scratchpad, never into the repo folder (my Playwright script wrote them to the current directory; give it absolute scratchpad paths).
+
+**Order change (22.11.2026).** Moving a section = move the block, renumber the numeral and the kicker of every section that shifts, move the nav link; ids stay. Check no prose or script refers to the numbers (none did). The page is hand-edited, build_v4.py is stale.
