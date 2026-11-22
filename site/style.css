@@ -142,3 +142,5 @@ details .done{padding:4px 16px 12px 36px}
 .pl-list a{font-size:13px;color:var(--mute);flex:none}
 
 .ph{aspect-ratio:16/9;border-radius:var(--r);background:linear-gradient(135deg,#0d2b33,#123c47);display:flex;align-items:center;justify-content:center;color:#9fc7cf;margin-bottom:14px}
+
+.pic.mp{max-width:1024px}.mp-gal{display:grid;grid-template-columns:1fr;gap:12px;max-width:1024px;margin:12px 0}@media(min-width:700px){.mp-gal{grid-template-columns:1fr 1fr}}.mp-gal .pic{margin:0}
