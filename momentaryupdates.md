@@ -85,3 +85,15 @@ Read as: "a 16" = E16; "djay reduce" = didgeridoos; "Tibetan balls" = Tibetan si
 "Please on the website, we're going to replace speakers with latest speakers for djs from aiaiaia" and then: "Or even better since you were recommending this mixer to Luca, which is a 20 channel headless mixer. We can go analog route with XLR cables in the ceiling, and then, we can use actually some kind of general system, find the best speakers for this kind of environment plus one subwoofer from general catalog. And add this mixer, from Allen and Heath to, equipment list."
 
 Read as: "aiaiaia" = AIAIAI (considered, replaced by "or even better"); "general" = Genelec; the mixer = Allen & Heath CQ-20B.
+
+## 22.11.2026, Marko (verbatim), the wall as a touch surface (sections 07)
+
+"Also develop these laser projectors projection to be touch sensitive. So somehow with some visual sensors or I don't know, you need better than me research, how can the wall itself become a touch screen."
+
+"add few lifestyle images, how by touching the screen we can interact with the screen. For example, if there is a water, I touch the screen and then the water start to ripple. Or few other examples, User can interact and guide some things on the screen, and also in that way, it can develop it motoric... Fine motoric abilities, moving fingers, legs, etcetera, and touching something to confirm it's done or whatever. So interaction with the wall"
+
+## 22.11.2026, Marko (verbatim), holographic characters and guides (section 08)
+
+"If technology exist for holographic projections, so we can have some holographic characters or guides inside the room. That also is possible to implement. Search on Internet what's possible. And add few lifestyle images with holographic characters. Animals Etcetera. Teacher's guides."
+
+Done 22.11.2026: sections 07 "Zid koji odgovara na dodir" and 08 "Likovi od svjetla u sobi" (text from the research notes, shortened, HR + EN, sources linked); the word on the page is "figure made of light". Later sections shifted to 09 Aplikacije, 10 Izvedba, 11 Nadahnuće.
