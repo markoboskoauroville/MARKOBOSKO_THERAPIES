@@ -97,3 +97,7 @@ Read as: "aiaiaia" = AIAIAI (considered, replaced by "or even better"); "general
 "If technology exist for holographic projections, so we can have some holographic characters or guides inside the room. That also is possible to implement. Search on Internet what's possible. And add few lifestyle images with holographic characters. Animals Etcetera. Teacher's guides."
 
 Done 22.11.2026: sections 07 "Zid koji odgovara na dodir" and 08 "Likovi od svjetla u sobi" (text from the research notes, shortened, HR + EN, sources linked); the word on the page is "figure made of light". Later sections shifted to 09 Aplikacije, 10 Izvedba, 11 Nadahnuće.
+
+## 22.11.2026, Marko (verbatim), the sound system decision
+
+Master's recommendation: "the 7360A on the floor, seven speakers through it and the eighth direct; everything stays in the analog chain and does not depend on the computer". Marko: "Yes equipment recommendation is good rewrite everything".
