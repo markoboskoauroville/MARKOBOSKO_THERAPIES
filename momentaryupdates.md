@@ -107,3 +107,7 @@ Master's recommendation: "the 7360A on the floor, seven speakers through it and 
 "Please add catalog on the therapist page from manufacturer for all these instruments for sound, but there are pasty gongs. There is koshy chime. Find the most famous djayi dos, drums from Remo, etcetera. Just find who has the... Who is most popular in a sense of Tibetan balls and whatever works in the flutes, different flutes, whatever is very highly popular in the sound, but you need to just research Instagram pages, Facebook pages of different sound bot practitioners, sound bot schools, sound therapy schools, and see their repertoire of instruments and build the catalog on the website. You can also look at local web web shop for this kind of instruments called Prema Vama in Zagreb and see what they offer. But don't link to them, link to the original manufacturer sites."
 
 Read as: "pasty" = Paiste, "koshy" = Koshi, "djayi dos" = didgeridoos, "Tibetan balls" = Tibetan bowls, "sound bot" = sound bath. Done as a closed drawer "Katalog: instrumenti i njihovi izrađivači" inside the E16 section (06), HR + EN; the Zagreb shop is not named or linked on the page.
+
+## 22.11.2026, Marko (verbatim), language selector always on screen
+
+"please add languague selector alway on screen on therapies as part of top menu bar"
