@@ -19,7 +19,7 @@
   }
   function hide() { btn.hidden = true; from = null; }
   var idle = 0, settled = false;
-  function show(y, h) { viaHist = h; from = y; btn.hidden = false; settled = false; clearTimeout(idle); idle = setTimeout(settle, 700); }
+  function show(y, h) { viaHist = h; from = y; btn.hidden = false; settled = false; clearTimeout(idle); idle = setTimeout(settle, 1000); }
   function settle() { land = window.scrollY; settled = true; }
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href^="#"]');
@@ -31,16 +31,16 @@
   }, true);
   btn.addEventListener('click', function () {
     var y = from, h = viaHist; hide();
-    if (h) history.back(); else window.scrollTo(0, y);   // Back lands on the entry that stored y (popstate below)
+    if (h) history.back(); else window.scrollTo({ top: y, behavior: 'instant' });   // Back lands on the entry that stored y (popstate below)
   });
   window.addEventListener('popstate', function (e) {
     if (panelPop) { panelPop = false; return; }                                    // closing the panel: stay where we are
     if (panel && !panel.hidden && !(e.state && e.state.tpPanel)) { closePanel(true); return; }
-    if (e.state && typeof e.state.tpY === 'number') { var y = e.state.tpY; setTimeout(function () { window.scrollTo(0, y); }, 30); hide(); }   // Back to an entry we stored (fragment jumps fire popstate too, with no state: ignored)
+    if (e.state && typeof e.state.tpY === 'number') { var y = e.state.tpY; setTimeout(function () { window.scrollTo({ top: y, behavior: 'instant' }); }, 30); hide(); }   // Back to an entry we stored (fragment jumps fire popstate too, with no state: ignored)
   });
   window.addEventListener('scroll', function () {
     if (btn.hidden) return;
-    if (!settled) { clearTimeout(idle); idle = setTimeout(settle, 250); return; }   // still travelling to the target
+    if (!settled) { clearTimeout(idle); idle = setTimeout(settle, 500); return; }   // still travelling to the target
     if (Math.abs(window.scrollY - land) > innerHeight * 1.5) hide();                // he scrolled far on his own
   }, { passive: true });
   /* the panel for his own page */
