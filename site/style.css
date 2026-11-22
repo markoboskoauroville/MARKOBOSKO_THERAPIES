@@ -140,3 +140,5 @@ details .done{padding:4px 16px 12px 36px}
 .pl-b img{width:80px;height:45px;object-fit:cover;border-radius:8px;flex:none;background:var(--bg2)}
 .pl-b[aria-pressed=true] span{color:var(--accent);font-weight:600}
 .pl-list a{font-size:13px;color:var(--mute);flex:none}
+
+.ph{aspect-ratio:16/9;border-radius:var(--r);background:linear-gradient(135deg,#0d2b33,#123c47);display:flex;align-items:center;justify-content:center;color:#9fc7cf;margin-bottom:14px}
