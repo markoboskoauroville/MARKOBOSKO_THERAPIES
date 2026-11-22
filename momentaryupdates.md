@@ -63,3 +63,9 @@ Read as: the MIDIPan section moves before the current 05 and becomes the new 05;
 "Another idea and also for visualization to connect, my noise with my MIDI controller, o x I e 16, and find another uses to control the light inside the room and sound inside the room with this controller, introduce this controller to my professors in academy... I mean, in faculty. Of course, make some lifestyle images, how different, sounds or how we call this player from the... This web page, which can be played on the... All these speakers live, can be controlled with color colored... Color coded knobs on e 16."
 
 Read as: "o x I e 16" = OXI E16 (OXI Instruments); "my noise" = myNoise (mynoise.net), already on the page; the section is an idea, nothing is connected.
+
+## 22.11.2026, Marko (verbatim part), midicontrol page, English version, language switch
+
+"...make a website with donation bubble for him to see the solution with lifestyle images and how people doing this controlling with e 16 and said I'm working in this faculty, and I will suggest that his sounds and this system is used for healing the handicapped people and translate my, page therapy to English. Also, as we always do with two pages upper upper right corner to switch between English and Croatian and link to that page from proposition two ... create a web page, which we called, midicontrol.markobosko.org."
+
+Read as: "my noise" = myNoise (Dr. Stéphane Pigeon); E16 section wording must not imply myNoise sounds are used; link to midicontrol.markobosko.org only once it answers 200; whole therapies page translated to English with an upper-right HR/EN switch.
