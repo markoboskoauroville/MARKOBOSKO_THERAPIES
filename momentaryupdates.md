@@ -75,3 +75,13 @@ Read as: "my noise" = myNoise (Dr. Stéphane Pigeon); E16 section wording must n
 "Just to make sure you are doing the e 16 also for suggestion for the faculty in my therapy page to controlling the all speakers levels and with button press, we can swap the sound on each speaker and use something similar as, my noise system. Our local system we're going to develop, basically looking very similar to this. And using our a 16. So user can create his own user experience with sound, which can be also kind of virtual sound, but when user just browse through sound with them clicking on the... On each knob and then turning it loudness, and then creating the sound, but from djay reduce, Tibetan balls, different shakers, shamanic drums, different harps, etcetera. Please check, what instruments are part of soundbath normally and list all the soundbath instruments on the page."
 
 Read as: "a 16" = E16; "djay reduce" = didgeridoos; "Tibetan balls" = Tibetan singing bowls; "soundbath" = sound bath.
+
+## 22.11.2026, Marko (verbatim), donation bowl at the bottom (reverses 21.11.2026)
+
+"Please add donation bowl at the bottom of, therapist page. I need to start to value my own work, so it goes everywhere now. At the bottom, you just add this."
+
+## 22.11.2026, Marko (verbatim), the sound system rewritten (Genelec, Allen & Heath CQ-20B)
+
+"Please on the website, we're going to replace speakers with latest speakers for djs from aiaiaia" and then: "Or even better since you were recommending this mixer to Luca, which is a 20 channel headless mixer. We can go analog route with XLR cables in the ceiling, and then, we can use actually some kind of general system, find the best speakers for this kind of environment plus one subwoofer from general catalog. And add this mixer, from Allen and Heath to, equipment list."
+
+Read as: "aiaiaia" = AIAIAI (considered, replaced by "or even better"); "general" = Genelec; the mixer = Allen & Heath CQ-20B.
