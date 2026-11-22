@@ -111,3 +111,6 @@ Read as: "pasty" = Paiste, "koshy" = Koshi, "djayi dos" = didgeridoos, "Tibetan 
 ## 22.11.2026, Marko (verbatim), language selector always on screen
 
 "please add languague selector alway on screen on therapies as part of top menu bar"
+
+## 22.11.2026 (picture grid under the instrument catalogue)
+Marko, word for word: "Please also update my page, therapies. Under the section of therapy instrument catalog, I want to see inspirational pictures with original instruments promoting there. Maybe you can make kind of a table, four by four, and just insert the thumbnails from these manufacturing sites. So it's inspirational and colorful and full of life."
