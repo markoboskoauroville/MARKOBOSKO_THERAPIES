@@ -61,7 +61,7 @@ MONTH = [
  ('Claude Max (Claude Code), mozak AI laboratorija', '≈ 214 €', 'https://claude.com/pricing', 'claude.com', '200 $ mjesečno + PDV'),
  ('Higgsfield Plus, slike, video i zvuk u videu (API po potrošnji)', '≈ 49 $', 'https://higgsfield.ai/', 'higgsfield.ai', 'cijena s Higgsfieldovog bloga, plus PDV; API se plaća unaprijed po generiranju'),
  ('Suno, besplatni račun za svaku osobu', '0 €', 'https://suno.com/pricing', 'suno.com', 'oko 10 pjesama dnevno; Pro oko 10 $ za vlastiti glas'),
- ('myNoise, licenca za korištenje u terapijskoj sobi', 'na upit', 'https://mynoise.net/licensing.php', 'mynoise.net', 'godišnja licenca, cijenu predlaže korisnik'),
+ ('myNoise: ostala upotreba osim privatnog slušanja', 'na upit', 'https://mynoise.net/licensing.php', 'mynoise.net', 'potrebna licenca koju dogovara autor'),
 ]
 def table(items):
     rows=[]; tot=0
@@ -118,11 +118,10 @@ s1 = sec('01','terapija','t','Terapija','Soba pod morem', f'''
 <div class="gal4"><img src="img/milkdrop/milkdrop-1-800.jpg" alt="MilkDrop: plavo-zlatno nebo kao oblaci" width="800" height="450" loading="lazy"><img src="img/milkdrop/milkdrop-3-800.jpg" alt="MilkDrop: zeleni i tirkizni slojevi poput tekuće stijene" width="800" height="450" loading="lazy"></div>
 <p><button type="button" id="milk-start" class="btn big">Pokreni MilkDrop uz podvodni zvuk</button></p>
 <h3>myNoise: zvučni pejzaži</h3>
-<figure class="pic wide"><a href="https://mynoise.net/NoiseMachines/rainNoiseGenerator.php" rel="noopener"><img src="img/mynoise.jpg" srcset="img/mynoise-960.jpg 960w, img/mynoise.jpg 1920w" sizes="(max-width:1100px) 100vw, 1100px" alt="Snimka zaslona stranice myNoise, generator kiše: deset obojenih krugova za deset kanala zvuka, gumb za pokretanje i gotove postavke" width="1920" height="1080" loading="lazy"></a><figcaption>myNoise, generator kiše: svaki od deset obojenih krugova jedan je kanal zvuka. Snimka zaslona: mynoise.net.</figcaption></figure>
 <p><a href="https://mynoise.net" rel="noopener">myNoise</a> je internetska stranica i aplikacija sa stotinama zvučnih pejzaža: kiša, more, šuma, vjetar, vatra, zdjele koje pjevaju. Izradio ju je belgijski inženjer zvuka Stéphane Pigeon od vlastitih snimki. Ljudi je koriste za opuštanje, san i usredotočenost.</p>
-<p>Posebna je po tome što zvuk nije gotova snimka, nego deset kanala koje sam podešavam, od dubokog tutnjanja do sitnih kapi. Zato je dobra za ovu sobu: svaki kanal mogu poslati na drugi zvučnik, pa su kapi u kutovima, daleka grmljavina na jednoj strani, a dubina mora oko cijele sobe. Zvuk mogu prilagoditi i svakoj osobi, na primjer stišati visoke tonove za dijete osjetljivo na zvuk.</p>
+<p>Posebna je po tome što zvuk nije gotova snimka, nego deset kanala koje slušatelj sam podešava, od dubokog tutnjanja do sitnih kapi.</p>
 <p><a class="btn off" href="https://mynoise.net/NoiseMachines/rainNoiseGenerator.php" rel="noopener">Kiša</a> <a class="btn off" href="https://mynoise.net/NoiseMachines/oceanNoiseGenerator.php" rel="noopener">More</a> <a class="btn off" href="https://mynoise.net/NoiseMachines/rainforestNoiseGenerator.php" rel="noopener">Prašuma</a> <a class="btn off" href="https://mynoise.net/NoiseMachines/windNoiseGenerator.php" rel="noopener">Vjetar</a> <a class="btn off" href="https://mynoise.net/NoiseMachines/singingBowlsDroneGenerator.php" rel="noopener">Zdjele koje pjevaju</a></p>
-<p class="note">Za korištenje u terapijskoj sobi myNoise traži godišnju licencu.</p>
+<p class="note">Zvukovi myNoisea besplatni su samo za osobno, privatno slušanje. Za svaku drugu upotrebu potrebna je licenca koju dogovara autor; pogledaj <a href="https://mynoise.net/licensing.php" rel="noopener">njegovu stranicu</a>.</p>
 <h3>DJ Mantra: ambijentalna playlista</h3>
 <p>Za mirne trenutke složio sam playlistu mekane, ambijentalne glazbe. Počinje s pjesmom Miss You od Trentemøllera, a dalje su Chantress Seba, Nils Frahm, Ólafur Arnalds, Brian Eno i Hania Rani.</p>
 <div class="pl" id="pl"><div class="video" id="pl-box" hidden></div>
