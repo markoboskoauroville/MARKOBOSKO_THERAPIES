@@ -114,3 +114,6 @@ Read as: "pasty" = Paiste, "koshy" = Koshi, "djayi dos" = didgeridoos, "Tibetan 
 
 ## 22.11.2026 (picture grid under the instrument catalogue)
 Marko, word for word: "Please also update my page, therapies. Under the section of therapy instrument catalog, I want to see inspirational pictures with original instruments promoting there. Maybe you can make kind of a table, four by four, and just insert the thumbnails from these manufacturing sites. So it's inspirational and colorful and full of life."
+
+## 22.11.2026 (navigation: a way back)
+Marko, word for word: "In therapy page I'm missing the navigation. There are so many links to take out user from this page, so he is lost. How to go back? Simply by clicking. Please find some way. Maybe you can open the page inside the page. I don't know. It must be the way to come back easily. I'm talking about therapy page"
