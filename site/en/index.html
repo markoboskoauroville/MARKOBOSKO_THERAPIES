@@ -466,7 +466,7 @@
 (function(){ var cur=document.documentElement.getAttribute("data-lang");
   document.querySelectorAll(".langsw a").forEach(function(a){ a.classList.toggle("on", a.dataset.l===cur); if(a.dataset.l===cur) a.setAttribute("aria-current","true");
     a.addEventListener("click", function(){ try{ localStorage.setItem("tp-lang",a.dataset.l); }catch(e){} });
-    if(a.dataset.l!==cur) a.addEventListener("click", function(e){ if(location.hash){ e.preventDefault(); location.href=a.getAttribute("href")+location.hash; } }); });
+    if(a.dataset.l!==cur) a.addEventListener("click", function(e){ if(location.hash){ e.preventDefault(); location.href=a.getAttribute("href")+location.hash; } }); else a.addEventListener("click", function(e){ e.preventDefault(); }); });
 })();
 </script>
 <script src="/playlist.js" defer></script>
