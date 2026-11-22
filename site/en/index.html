@@ -43,7 +43,7 @@
 <nav class="chips" aria-label="The four uses"><a href="#terapija"><i class="dot t"></i>Therapy</a><a href="#pokret"><i class="dot a"></i>Movement analysis</a><a href="#ai-lab"><i class="dot v"></i>AI lab</a><a href="#erf"><i class="dot w"></i>Research</a></nav>
 <p class="ded">For Prof. <a href="https://www.erf.unizg.hr/djelatnici/renata.martinec" rel="noopener">Renata Martinec</a>, PhD, and her assistant <a href="https://www.erf.unizg.hr/djelatnici/brigita.vilc" rel="noopener">Brigita Vilč</a>, Department of Motor Disorders, Chronic Diseases and Art Therapies, <a href="https://www.erf.unizg.hr" rel="noopener">Faculty of Education and Rehabilitation Sciences</a>.</p>
 </div></header>
-<nav class="topnav" aria-label="Contents"><div class="wrap"><a href="#terapija">Therapy</a><a href="#pokret">Movement</a><a href="#ai-lab">AI lab</a><a href="#erf">For ERF</a><a href="#midipan">MIDIPan</a><a href="#e16">E16</a><a href="#aplikacije">Apps</a><a href="#oprema">Equipment</a><a href="#nadahnuce">Inspiration</a><a href="#o-meni">About me</a></div></nav>
+<nav class="topnav" aria-label="Contents"><div class="wrap"><a href="#terapija">Therapy</a><a href="#pokret">Movement</a><a href="#ai-lab">AI lab</a><a href="#erf">For ERF</a><a href="#midipan">MIDIPan</a><a href="#e16">E16</a><a href="#zid">Wall</a><a href="#likovi-svjetla">Light</a><a href="#aplikacije">Apps</a><a href="#oprema">Equipment</a><a href="#nadahnuce">Inspiration</a><a href="#o-meni">About me</a></div></nav>
 <main>
 <section id="terapija" class="sec"><div class="wrap"><span class="num" aria-hidden="true">01</span><p class="kicker"><i class="dot t"></i>01 · Therapy</p><h2>The room under the sea</h2><p class="lede">A person in a wheelchair sits in the middle of the room, and a Caribbean reef swims around them. The sound comes from the whole room, as if they were really under the sea. Nothing has to be done. And when the person wants to, the room answers their movement and voice.</p></div>
 
@@ -173,7 +173,7 @@
 <li><b>Voice</b> · glas: humming, a tone, a chant</li></ul></div>
 </div>
 <p class="note">The list was put together from three sources that mostly agree: <a href="https://www.dictionary.com/browse/sound-bath" rel="noopener">Dictionary.com</a>, <a href="https://health.clevelandclinic.org/sound-bath" rel="noopener">Cleveland Clinic</a> and the practitioner site <a href="https://immersivesoundexp.com/sound-bath-instruments/" rel="noopener">Immersive Sound Experience</a>. I add harps and lyres, rattles and the didgeridoo by my own choice: they are not on every list.</p>
-<p>Some of these instruments are already in section <a href="#nadahnuce">09 Inspiration</a>: crystal bells and big drums. I did not find the clay Stonewhistle flutes on sound bath lists. The sounds would be recorded on real instruments or properly licensed; none of them is on the page yet.</p>
+<p>Some of these instruments are already in section <a href="#nadahnuce">11 Inspiration</a>: crystal bells and big drums. I did not find the clay Stonewhistle flutes on sound bath lists. The sounds would be recorded on real instruments or properly licensed; none of them is on the page yet.</p>
 <h3 class="h4">What else could be explored</h3>
 <ul>
 <li>A knob that the person turns with a slow, simple movement of the hand, as a complement to MIDIPan, which exercises the fingers.</li>
@@ -185,7 +185,73 @@
 <p><a class="btn off" href="https://midicontrol.markobosko.org" target="_blank" rel="noopener">MIDI control: a working demo and the idea in detail</a></p>
 </div></div>
 </section>
-<section id="aplikacije" class="sec"><div class="wrap"><span class="num" aria-hidden="true">07</span><p class="kicker"><i class="dot t"></i>07 · Apps</p><h2>What already exists</h2><p class="lede">Three apps that work today, without the room.</p></div>
+<section id="zid" class="sec"><div class="wrap"><span class="num" aria-hidden="true">07</span><p class="kicker"><i class="dot w"></i>07 · Project proposal</p><h2>The wall that answers a touch</h2><p class="lede">Can the projected wall react when a person touches it? Yes, in several ways. This is a proposal to explore with the faculty's specialists, not a finished product.</p></div>
+<div class="wrap"><div class="card">
+<div class="ph" role="img" aria-label="Place for a picture: a person in a wheelchair touches projected water on the wall and ripples spread from the fingers"><span>Pictures coming soon</span></div>
+<h3 class="h4">What exists</h3>
+<ul>
+<li><b>A depth camera</b> hung from the ceiling sees a hand or body near the wall, and software turns that into a touch (<a href="https://www.orbbec.com/products/femto-bolt/" rel="noopener">Orbbec Femto Bolt</a> and Intel's RealSense cameras). It works at a distance and nothing is built into the wall. It sees a hand better than a fingertip.</li>
+<li><b>The room's own cameras:</b> eight phone cameras and the Skeleton app already find hands. The cheapest, but the least exact: it can say "a hand over the water", not "a touch at this millimetre".</li>
+<li><b>A laser scanner along the wall</b> (a "light curtain"; first shown at MIT as the LaserWall, today scanners from Hokuyo are used) sees a real fingertip touch, even on very large walls.</li>
+<li><b>Infrared touch frames</b> are made for flat screens, in the standard range up to about 55 inches. For a projected wall I could not confirm it.</li>
+<li><b>An interactive projector</b> with touch (Epson BrightLink 770Fi, area up to 100 inches; finger touch needs an extra unit). Simple, but it covers one screen, not a whole wall.</li>
+<li><b>Ready-made systems for sensory and therapy rooms:</b> LUMOplay (the maker estimates about 2,000 to 2,500 US dollars for a complete new system; read 22 November 2026), EyeClick (systems from 5,796 US dollars; read 22 November 2026) and omiWall (price on request).</li>
+</ul>
+<p>A touch becomes a mouse or touch event, or travels as TUIO, an open protocol that game engines and tools like Unity can read. The room's Mac mini can then react.</p>
+<h3 class="h4">What fits this room</h3>
+<p>I would try a depth camera hung from the ceiling beside the projector first. It fits the rule that nothing is on the walls or the floor. A laser scanner low along the wall sees a real touch, but it would stand at the foot of the wall and break that rule, so it comes only as a second step, if finer touch is wanted.</p>
+<p>A cheap first step: one camera and the trial period of ready-made software on one wall. On site it has to be checked how high and how far from the wall a seated person's hand is, whether the wall is flat, and how the light of the other projectors reaches the camera.</p>
+<h3 class="h4">What could be explored with the faculty's specialists</h3>
+<ul>
+<li>Touch the water and it ripples: slow, calm, a cause and an effect.</li>
+<li>A fish follows the hand, and the person guides it across the wall.</li>
+<li>Touch a glowing shape to say "done".</li>
+<li>Targets at different heights: high for arms, low for hands, small for fingers.</li>
+<li>Two people touching together, so something happens only when both touch.</li>
+<li>Everything slow, no flashing, and a miss is never punished. The therapist sets the size of the targets and how long they stay.</li>
+</ul>
+<p>Limits: a camera sees a hand near the wall and does not feel a real touch, so targets must be big and forgiving. For fine finger work MIDIPan in section <a href="#midipan">05</a> is the better tool. I promise no result and claim nothing medical.</p>
+<p class="note">Sources (read 22 November 2026): <a href="https://www.orbbec.com/products/femto-bolt/" rel="noopener">Orbbec Femto Bolt</a>, <a href="https://techcommunity.microsoft.com/t5/mixed-reality-blog/microsoft-s-azure-kinect-developer-kit-technology-transfers-to/ba-p/3899122" rel="noopener">Microsoft</a>, <a href="https://www.intelcapital.com/realsense-completes-spin-out-from-intel-raises-50-million-to-accelerate-ai-powered-vision-for-robotics-and-biometrics/" rel="noopener">RealSense</a>, <a href="https://www.hokuyo-aut.jp/case/data.php?id=15" rel="noopener">Hokuyo</a>, <a href="https://www.media.mit.edu/projects/laserwall/overview/" rel="noopener">MIT LaserWall</a>, <a href="https://www.epson.eu/products/projector/ultra-short-throw/eb-770fi-projector/p/38508" rel="noopener">Epson EB-770Fi</a>, <a href="https://www.lumoplay.com" rel="noopener">LUMOplay</a>, <a href="https://eyeclick.com/sensory-rooms" rel="noopener">EyeClick</a>, <a href="https://omi.uk/omiwall" rel="noopener">omiWall</a>, <a href="https://www.tuio.org" rel="noopener">TUIO</a>.</p>
+<p class="note mp-cap">The pictures are illustrations of the idea, made with artificial intelligence. They are not photographs of real people.</p>
+</div></div>
+</section>
+<section id="likovi-svjetla" class="sec"><div class="wrap"><span class="num" aria-hidden="true">08</span><p class="kicker"><i class="dot v"></i>08 · Project proposal</p><h2>Figures of light in the room</h2><p class="lede">A free-floating hologram in the air does not exist as a product; "hologram" is a trade name for tricks that make a figure look as if it stands in the room. So here I speak of a figure made of light. This is a proposal to explore with the faculty's specialists.</p></div>
+<div class="wrap"><div class="card">
+<div class="ph" role="img" aria-label="Place for a picture: a turtle made of light floats in the room in front of the projected reef"><span>Pictures coming soon</span></div>
+<h3 class="h4">What fits this room</h3>
+<p>Three levels, from simple to special:</p>
+<ol>
+<li><b>A character on the wall that turns to the person and reacts.</b> A turtle, a fish or a guide drawn in light, on the projected reef. It needs no new hardware, only the room's software and cameras. It comes closer, looks around and goes away when the therapist says.</li>
+<li><b>A figure on gauze in one corner.</b> A thin see-through cloth hung from the ceiling in front of the wall, with a projector shining on it, can make an animal or a guide look as if it stands in the room. It has to be tested: this room's projector may not suit it, and light from the other walls would spoil it. A hand passes through cloth, so it must be fixed so nobody gets tangled.</li>
+<li><b>A transparent screen.</b> Expensive for a small figure, and a glass object in a room where wheelchairs move.</li>
+</ol>
+<p><b>What does not fit:</b> spinning LED fans (sellers warn about the spinning blades and advise hanging them out of reach), volumetric displays (too small) and hologram boxes (cabinets as big as a person). Headsets close the room off and are heavy, which some may find distressing; age limits and fit I did not research.</p>
+<p>A cheap first step: one animal character on one wall, reacting to a hand through the cameras the room already has. If the faculty likes it, try a gauze in one corner.</p>
+<details><summary>All the approaches in one overview</summary><ul>
+<li><b>Pepper's ghost with a foil:</b> the figure looks as if it stands behind the foil; the hidden space must be dark.</li>
+<li><b>Gauze with projection:</b> a large figure, a hand passes through but the effect breaks; dim light.</li>
+<li><b>Transparent OLED screen:</b> LG 55 inch, about 38% transparency; a glass screen.</li>
+<li><b>Hologram box:</b> Proto Luma, 88 by 50 by 24 inches; a cabinet.</li>
+<li><b>Spinning LED fan:</b> HYPERVSN; blades spin at high speed.</li>
+<li><b>Light-field display:</b> Looking Glass, up to 27 inches for a group, a viewing cone of 53 degrees, no glasses.</li>
+<li><b>Volumetric display:</b> Voxon VX1, 18 by 18 by 8 cm; moving parts inside.</li>
+<li><b>Fog screen:</b> FogScreen; you can walk through it; check moisture and breathing with specialists.</li>
+<li><b>Headset:</b> only the wearer sees it; Microsoft ended HoloLens 2 in 2024.</li>
+</ul></details>
+<h3 class="h4">What a guide could do</h3>
+<p>These are ideas to explore with specialists, not a claim of effect.</p>
+<ul>
+<li>Show a movement to copy: a guide of light slowly raises an arm, and the person copies it when ready.</li>
+<li>Wait: the guide stands still and does not hurry or score.</li>
+<li>Nod when it is done, with a gentle light.</li>
+<li>An animal that comes closer when the person is calm or reaches out.</li>
+<li>Always under the therapist's control, with a button that switches the figure off at once. Some people may find a figure unsettling, so it is optional and can be a simple shape instead of a face.</li>
+</ul>
+<p class="note">Sources (read 22 November 2026): <a href="https://lookingglassfactory.com" rel="noopener">Looking Glass</a>, <a href="https://hypervsn.com" rel="noopener">HYPERVSN</a>, <a href="https://www.ledlightsworld.com/blogs/products-blog/safety-considerations-when-using-3d-hologram-fans-in-public-spaces" rel="noopener">LED Lights World</a>, <a href="https://protohologram.com" rel="noopener">Proto</a>, <a href="https://www.lg.com/ca_en/business/oled-signage/55ew5g-a" rel="noopener">LG</a>, <a href="https://newatlas.com/vr/voxon-photonics-3d-hologram-volumetric-displays" rel="noopener">Voxon</a>, <a href="https://www.tomshardware.com/news/fogscreen-projects-thin-air,526.html" rel="noopener">FogScreen</a>, <a href="https://www.uploadvr.com/microsoft-discontinuing-hololens-2/" rel="noopener">HoloLens 2</a>.</p>
+<p class="note mp-cap">These pictures show an idea. They were made with artificial intelligence. In a real room the effect would look different and would depend on the technique chosen.</p>
+</div></div>
+</section>
+<section id="aplikacije" class="sec"><div class="wrap"><span class="num" aria-hidden="true">09</span><p class="kicker"><i class="dot t"></i>09 · Apps</p><h2>What already exists</h2><p class="lede">Three apps that work today, without the room.</p></div>
 
 <div class="wrap"><div class="apps">
 <div class="card"><h3 class="h4">Skeleton</h3><p>My app for the Mac: a skeleton over the picture from one or more cameras, comparison with a target pose, voice instructions and a score from 0 to 100. Phones over USB or Wi-Fi become its cameras.</p></div>
@@ -195,7 +261,7 @@
 <div class="card"><h3 class="h4">Chakra and Elements Toning</h3><p>A meditation app with the sounds of the chakras and elements, a MilkDrop picture and a breath circle. For Android.</p><p><a class="btn" href="https://github.com/markoboskoauroville/MANTRA_ROOM/releases/download/v25/25-chakra-elements-toning-v25.apk" data-dl-app="chakra-and-elements-toning" data-dl-label="downloads" rel="noopener">Download</a></p></div>
 </div></div>
 </section>
-<section id="oprema" class="sec"><div class="wrap"><span class="num" aria-hidden="true">08</span><p class="kicker"><i class="dot a"></i>08 · Realisation</p><h2>Equipment, diagram and costs</h2></div>
+<section id="oprema" class="sec"><div class="wrap"><span class="num" aria-hidden="true">10</span><p class="kicker"><i class="dot a"></i>10 · Realisation</p><h2>Equipment, diagram and costs</h2></div>
 
 <div class="wrap">
 <div class="totals">
@@ -264,7 +330,7 @@
 <p class="note">Total one-off: <b>20,421.26 €</b> (room, ring and software), plus about 260 € a month (Claude Max and Higgsfield). Prices are from 21 November 2026, with VAT unless stated otherwise.</p>
 </div>
 </section>
-<section id="nadahnuce" class="sec"><div class="wrap"><span class="num" aria-hidden="true">09</span><p class="kicker"><i class="dot w"></i>09 · Inspiration</p><h2>Svaram, instruments and people</h2></div>
+<section id="nadahnuce" class="sec"><div class="wrap"><span class="num" aria-hidden="true">11</span><p class="kicker"><i class="dot w"></i>11 · Inspiration</p><h2>Svaram, instruments and people</h2></div>
 
 <div class="wrap">
 <p>While I lived in Auroville, I filmed for <a href="https://svaram.org" rel="noopener">Svaram</a>, a workshop for sound and instruments. Their spaces are the model for this room: instruments a child can touch and feel with the whole body.</p>
