@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="hr">
+<html lang="hr" data-lang="hr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jedna soba, četiri namjene · Marko Boško</title>
 <meta name="description" content="Jedna soba, četiri namjene: terapijska soba pod morem, laboratorij za analizu pokreta, AI laboratorij i istraživanje. Prijedlog za ERF Zagreb.">
 <link rel="canonical" href="https://therapies.markobosko.org/">
+<link rel="alternate" hreflang="hr" href="https://therapies.markobosko.org/"><link rel="alternate" hreflang="en" href="https://therapies.markobosko.org/en/"><link rel="alternate" hreflang="x-default" href="https://therapies.markobosko.org/">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Marko Bosko">
 <meta property="og:type" content="website">
@@ -27,6 +28,7 @@
 <body>
 <a class="skip" href="#terapija">Preskoči na sadržaj</a>
 <header class="hero">
+<nav class="langsw" aria-label="Jezik / Language"><a data-l="hr" href="/" hreflang="hr" lang="hr">HR</a>|<a data-l="en" href="/en/" hreflang="en" lang="en">EN</a></nav>
 <img class="hero-img" src="img/room.jpg" srcset="img/room-960.jpg 960w, img/room.jpg 1920w" sizes="100vw" alt="Mlada osoba u invalidskim kolicima usred sobe gleda kornjaču i ražu na zidovima; projektori i zvučnici s mobitelima vise sa stropa, pod je prazan" width="1920" height="1072" fetchpriority="high">
 <div class="hero-in wrap">
 <p class="kicker"><i class="dot t"></i><i class="dot a"></i><i class="dot v"></i><i class="dot w"></i>Prijedlog za ERF Zagreb</p>
@@ -133,7 +135,7 @@
 <div class="wrap"><div class="card">
 <div class="ph" role="img" aria-label="Mjesto za sliku: osoba u kolicima upravlja zvukom i svjetlom sobe s OXI E16"><span>Slika stiže uskoro</span></div>
 <h3 class="h4">Upravljač koji imam</h3>
-<p><a href="https://oxiinstruments.com/products/oxi-e16-midi-controller" rel="noopener">OXI E16</a> je MIDI upravljač tvrtke OXI Instruments. Ima šesnaest okretnih gumba, a svaki je okružen prstenom svjetala u boji. Mali zaslon pokazuje vrijednosti. Širok je 114 mm, dubok 143 mm, visok 36 mm i težak 0,37 kg, u aluminijskom kućištu. S računalom se spaja USB-om, a podržava i MIDI preko TRS priključka te Bluetooth MIDI. Cijena na stranici proizvođača 22.11.2026: 449 €, a taj je dan uz popust od 20 % bila 359,20 €.</p>
+<p><a href="https://oxiinstruments.com/products/oxi-e16-midi-controller" rel="noopener">OXI E16</a> je MIDI upravljač tvrtke OXI Instruments. Ima šesnaest okretnih gumba koji se okreću glatko, bez škljocanja, a svaki je okružen prstenom svjetala u boji. Mali zaslon pokazuje vrijednosti. Širok je 114 mm, dubok 143 mm, visok 36 mm i težak 0,37 kg, u aluminijskom kućištu. S računalom se spaja USB-om, a podržava i MIDI preko TRS priključka te Bluetooth MIDI. Cijena 449 € (očitano 22.11.2026, na stranici proizvođača).</p>
 <h3 class="h4">Ideja</h3>
 <p>Svaki gumb je jedna stvar u sobi. <b>Zvuk:</b> gumb je jedan zvuk ili sloj zvuka, na primjer voda, vjetar, tihi bordun ili glas, a pod prstom je njegova glasnoća. Boja prstena odgovara boji tog zvuka na zidu, pa terapeut ili sama osoba miješa sobu bez ekrana. Sav zvuk u ovom prijedlogu dolazi iz zvučnog playera ove stranice. Po mojem mišljenju takvim gumbima najviše odgovaraju generatori zvuka s odvojenim klizačima, a najpoznatiji je <a href="https://mynoise.net" rel="noopener">myNoise</a>. MIDI upravljanje takvim generatorima zvuka ideja je koju želim predložiti autoru.</p>
 <p><b>Svjetlo:</b> gumbi za boju i svjetlinu svjetla u sobi i projicirane slike. Samo spore promjene, bez bljeskanja, kao u probnom terapijskom načinu. <b>Slika:</b> što se okrene, odmah se vidi na prstenu gumba i na zidu.</p>
@@ -260,6 +262,14 @@
 </main>
 <div id="mk" hidden role="dialog" aria-label="MilkDrop"><canvas id="mk-cv" aria-hidden="true"></canvas><button type="button" id="mk-x">✕ Izlaz</button></div>
 <audio id="mk-au" src="audio/karipsko-more-underwater.mp3" preload="none" loop></audio>
+<script>
+// HR | EN, upper right: two pages (/ and /en/), the current one marked, the choice remembered once a visitor clicks; no automatic redirect.
+(function(){ var cur=document.documentElement.getAttribute("data-lang");
+  document.querySelectorAll(".langsw a").forEach(function(a){ a.classList.toggle("on", a.dataset.l===cur); if(a.dataset.l===cur) a.setAttribute("aria-current","true");
+    a.addEventListener("click", function(){ try{ localStorage.setItem("tp-lang",a.dataset.l); }catch(e){} });
+    if(a.dataset.l!==cur) a.addEventListener("click", function(e){ if(location.hash){ e.preventDefault(); location.href=a.getAttribute("href")+location.hash; } }); });
+})();
+</script>
 <script src="playlist.js" defer></script>
 <script src="milk.js" defer></script>
 <script src="https://mantra-downloads.marko-bosko-925.workers.dev/counter.js" defer></script>

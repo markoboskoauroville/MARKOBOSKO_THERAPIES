@@ -127,12 +127,59 @@ def back_to_list(cat):
     return h.to_album_list(cat)
 
 
+def quick_page():
+    """One dump of the album page: title, category, description and the visible track rows (track 1 is all we need)."""
+    ns = []
+    for _ in range(4):
+        ns = h.nodes()
+        if h.find(ns, id='tv_name_of_track') and (h.find(ns, id='tv_album_description') or {'text': ''})['text']:
+            break
+        time.sleep(1.5)
+    g = lambda i: (h.find(ns, id=i) or {'text': ''})['text']
+    nums = [n for n in ns if n['id'] == 'tv_number_of_track']; names = [n for n in ns if n['id'] == 'tv_name_of_track']
+    tracks = [(int(a['text'].strip('.') or 0), t['text']) for a, t in zip(nums, names)]
+    return {'album': g('tv_title_album_name'), 'category': g('tv_title_album_category'), 'description': g('tv_album_description'),
+            'tracks': sorted(tracks)}
+
+
+import threading
+VOICE_Q = []
+
+
+def voice_worker():
+    """Whisper runs beside the queue so it never holds up the next album."""
+    while True:
+        if not VOICE_Q:
+            time.sleep(1); continue
+        n, wavp = VOICE_Q.pop(0)
+        try:
+            seg = au.load(wavp)
+            nw, heard = R.speech_words(seg)
+            m = json.load(open(meta_path(n)))
+            m['voice'] = 'unknown' if nw < 0 else bool(nw > 6); m['heard'] = heard
+            json.dump(m, open(meta_path(n), 'w'), ensure_ascii=False, indent=1)
+            log('VOICE', n, m['voice'], repr(heard)[:60])
+        except Exception as e:
+            log('voice check failed', n, repr(e)[:100])
+        finally:
+            if wavp.startswith(TEMP):
+                try:
+                    os.remove(wavp)
+                except OSError:
+                    pass
+
+
+threading.Thread(target=voice_worker, daemon=True).start()
+
+
 def take_sample(x, cat, P):
     n = x['n']; name = x['album']
     if not h.open_in_list(name):
         if not (h.to_album_list(cat) and h.open_in_list(name)):
             raise RuntimeError('album not found in ' + cat)
-    info = h.album_page()
+    info = quick_page()
+    if not info['tracks']:
+        info = h.album_page()
     if not info['tracks']:
         raise RuntimeError('no tracks')
     album = R.clean_album_name(info['album'] or name)
@@ -195,15 +242,14 @@ def take_sample(x, cat, P):
            '-metadata', f'track={n}', master]
     if subprocess.run(cmd, capture_output=True).returncode != 0:
         raise RuntimeError('encode failed')
-    nw, heard = R.speech_words(seg.astype(np.float32))
-    voice = 'unknown' if nw < 0 else bool(nw > 6)
+    voice, heard = 'unknown', ''
     m = {'n': n, 'album': album, 'album_raw': info['album'], 'title': title, 'track_raw': track, 'artist': artist,
          'voice': voice, 'heard': heard, 'master': master, 'cover': cover, 'duration_s': length, 'sample_from_s': int(target),
          'seeked_to_s': e2, 'category_in_app': info['category'], 'list': cat, 'tracks': len(info['tracks']),
          'description': info['description'], 'gaps': rep.get('gaps_removed', 0), 'gap_ms': int(rep.get('gap_s', 0) * 1000)}
     json.dump(m, open(meta_path(n), 'w'), ensure_ascii=False, indent=1)
-    os.remove(wav); os.remove(tw)
-    log('CAT', n, album, '|', title, '|', artist, '| voice', voice, '| len', length, 'from', e2, '| gaps', m['gaps'])
+    os.remove(wav); VOICE_Q.append((n, tw))
+    log('CAT', n, album, '|', title, '|', artist, '| len', length, 'from', e2, '| gaps', m['gaps'])
     return m
 
 
@@ -212,6 +258,10 @@ def site_slug(s):
 
 
 def publish(idx):
+    for _ in range(90):
+        if not VOICE_Q:
+            break
+        time.sleep(1)
     out = []
     for x in idx:
         if not os.path.exists(meta_path(x['n'])):
@@ -288,6 +338,11 @@ def main():
     P.d['clips'] = {'done': ndone, 'total': len(idx), 'current': ''}
     P.set(phase='catalog', state='idle', message=f'catalogue: {len(idx)} albums known so far, {ndone} done')
     log('START catalogue', len(idx), 'known,', ndone, 'done; temp', TEMP)
+    for x in idx:
+        if os.path.exists(meta_path(x['n'])):
+            m = json.load(open(meta_path(x['n'])))
+            if m.get('voice') == 'unknown' and os.path.exists(m.get('master', '')):
+                VOICE_Q.append((x['n'], m['master']))
     failed = {}
     for ci, cat in enumerate(cats):
         P.set(state='navigating', message=f'list {ci + 1}/{len(cats)}: {cat}')

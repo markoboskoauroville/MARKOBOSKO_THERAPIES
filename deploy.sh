@@ -14,6 +14,8 @@ import re,os; raw=open(os.path.expanduser('~/Downloads/API/Cloudflare.api.txt'))
 import re,os; raw=open(os.path.expanduser('~/Downloads/API/Cloudflare.api.txt')).read(); print([l.strip() for l in raw.splitlines() if re.fullmatch(r'[A-Za-z0-9_\-]{30,}', l.strip())][-1])")
 fi
 cd "$HERE"
+# the Croatian and English pages must have the same structure (tools/check_langs.py); stops the deploy otherwise
+python3 tools/check_langs.py || { echo "deploy stopped: fix the language parity first"; exit 1; }
 # confirm the project exists first; stop if it does not
 npx --yes wrangler pages project list 2>/dev/null | grep -q " $PROJECT " || { echo "Pages project $PROJECT not found: stop"; exit 1; }
 # deploy a clean copy: research notes (*.md) stay in the repo, never on the site

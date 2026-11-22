@@ -7,7 +7,7 @@
   const loadJs = src => new Promise((ok, no) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = no; document.head.append(s); });
   function size() { const w = innerWidth, h = innerHeight; cv.width = w; cv.height = h; if (viz) viz.setRendererSize(w, h); }
   async function init() {
-    loaded = loaded || Promise.all([loadJs('vendor/butterchurn.min.js'), loadJs('vendor/butterchurnPresets.min.js')]); await loaded;
+    loaded = loaded || Promise.all([loadJs('/vendor/butterchurn.min.js'), loadJs('/vendor/butterchurnPresets.min.js')]); await loaded;
     const BC = window.butterchurn.default || window.butterchurn; BP = (window.butterchurnPresets.default || window.butterchurnPresets).getPresets();
     keys = CALM.filter(k => BP[k]);
     ac = new (window.AudioContext || window.webkitAudioContext)();
