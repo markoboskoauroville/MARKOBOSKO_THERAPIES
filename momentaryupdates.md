@@ -69,3 +69,9 @@ Read as: "o x I e 16" = OXI E16 (OXI Instruments); "my noise" = myNoise (mynoise
 "...make a website with donation bubble for him to see the solution with lifestyle images and how people doing this controlling with e 16 and said I'm working in this faculty, and I will suggest that his sounds and this system is used for healing the handicapped people and translate my, page therapy to English. Also, as we always do with two pages upper upper right corner to switch between English and Croatian and link to that page from proposition two ... create a web page, which we called, midicontrol.markobosko.org."
 
 Read as: "my noise" = myNoise (Dr. Stéphane Pigeon); E16 section wording must not imply myNoise sounds are used; link to midicontrol.markobosko.org only once it answers 200; whole therapies page translated to English with an upper-right HR/EN switch.
+
+## 22.11.2026, Marko (verbatim), E16 proposal made precise: speakers, sounds, sound bath instruments
+
+"Just to make sure you are doing the e 16 also for suggestion for the faculty in my therapy page to controlling the all speakers levels and with button press, we can swap the sound on each speaker and use something similar as, my noise system. Our local system we're going to develop, basically looking very similar to this. And using our a 16. So user can create his own user experience with sound, which can be also kind of virtual sound, but when user just browse through sound with them clicking on the... On each knob and then turning it loudness, and then creating the sound, but from djay reduce, Tibetan balls, different shakers, shamanic drums, different harps, etcetera. Please check, what instruments are part of soundbath normally and list all the soundbath instruments on the page."
+
+Read as: "a 16" = E16; "djay reduce" = didgeridoos; "Tibetan balls" = Tibetan singing bowls; "soundbath" = sound bath.
