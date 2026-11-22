@@ -23,3 +23,5 @@
 **myNoise wording (22.11.2026).** Never state licence terms or prices from memory or from a brief: quote only the author's public page. A screenshot of someone's site is a copy: do not publish it. Stale builder scripts keep wrong lines alive: fix the source too.
 
 **Shared VM worker (22.11.2026).** batch.json is one file for all jobs: another session replaced it while my redo waited, and my item never ran until I resubmitted after "round ends". Check `tail worker.log` for "round ends" before replacing batch.json and give each item a new name instead of moving files on Drive (Drive moves took minutes). The model cannot draw a 4 x 4 knob grid in a wide shot: ask for it only in a close top view (B).
+
+**Facts about Marko's own gear (22.11.2026).** The manifest's measured notes (e.g. MANTRA_MANIFEST modules/oxi-e16.md: every encoder has a push with its own action) come BEFORE the maker's web page. I wrote "I do not know whether the E16 knobs can be pressed" on a page signed by the device's owner; read the manifest first (grep modules for the device name).
