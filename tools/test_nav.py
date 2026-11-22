@@ -11,7 +11,7 @@ def check(c, m):
     global bad
     print(('ok   ' if c else 'FAIL ') + m); bad += (not c)
 for lang, path in (('hr', '/'), ('en', '/en/')):
-    s = urllib.request.urlopen(base + path).read().decode()
+    s = urllib.request.urlopen(urllib.request.Request(base + path, headers={'User-Agent': 'Mozilla/5.0'})).read().decode()
     tags = re.findall(r'(<a\b[^>]*href="https?://(?!therapies\.markobosko\.org)[^"]*"[^>]*>)(.*?)</a>', s, flags=re.S)
     ok = [t for t, i in tags if 'target="_blank"' in t and 'rel="noopener"' in t and 'class="ext"' in i and 'class="sr"' in i]
     check(len(tags) == len(ok) and len(tags) > 100, f'{lang}: {len(ok)} of {len(tags)} outside links have target=_blank, noopener, the sign and the label')
