@@ -51,3 +51,9 @@ one H1 "Jedna soba, četiri namjene", sticky nav, numbered sections 01–07: Ter
 "This is device I have right here in home and for this you need to create also lifestyle images with Google, referencing the pictures and putting the person having this kind of interaction in our AI room."
 
 Read as: "handicapped person" = osoba s invaliditetom (respectful wording on the site); "faculty" = ERF (the faculty the site is for).
+
+## 22.11.2026, Marko (verbatim, dictated), move the MIDIPan section up
+
+"Please on the therapist website before swaram or inspiration zero seven and before the scheme of the whole thing, before zero six and even even before zero five, you need to add this MIDI controller pan... MIDI pan."
+
+Read as: the MIDIPan section moves before the current 05 and becomes the new 05; the old 05, 06, 07 become 06, 07, 08.
