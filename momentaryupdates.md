@@ -41,3 +41,13 @@ Done (tools/build_phase3.py builds the body): ceiling scheme SVG, Android recomm
 
 Done (tools/build_v4.py writes the whole page; plan and review by a Fable agent, research by Sonnet, app catalogue by Haiku):
 one H1 "Jedna soba, četiri namjene", sticky nav, numbered sections 01–07: Terapija, Laboratorij pokreta (12-phone ring Ø3 m truss, Zylia in the centre, Skeleton + Pose2Sim, before/after gait, bullet time, evidence caveats, consent), AI laboratorij (sofa, alpha/theta as intention, five-step voice flow, tools: Claude Code, Ableton, Resolve, Blender, Higgsfield, Speechify; Marko's own apps made with Claude Code; Elevate Media not named), Za ERF (nine use cases incl. dissertations, case studies, comparison charts, speech therapy, autism, vision/hearing), Aplikacije (Skeleton, MindGarden with screenshots + Drive share link, Chakra Toning), Oprema (totals, scheme, tables in <details>, Higgsfield Plus in monthly), Nadahnuće (Svaram, Euphony, Borić, Stonewhistle). Playlist starts with Trentemøller "Miss You".
+
+## 22.11.2026, Marko (verbatim, dictated), MidiPan finger-coordination project
+
+"https://www.etsy.com/listing/1735074092/midipan-a-touch-sensitive-tongue-drum?ref=yr_purchases  So for this part, this is the device I have. So we are going to now upgrade our website, therapies.markobosko.org"
+
+"And we can say, because I don't know what they need in that faculty, but I think to develop motorical abilities for a handicapped person, we need to develop some kind of games. So I suggest this device to develop the fingers. So for example, user can come, touch the middle to start the application and then it needs to use it ten fingers to press certain areas of the screen of this device, buttons, and then he gets some reward. For example, in the screen some character pop up or something like that, in that sense. So put this also as suggestion for the project to develop with this device like finger coordinations. So the voice will say touch pad number 1, 5 or whatever with your index finger and so on with ring finger. And this is how you are stretching your fingers and you are guiding with computer, by computer."
+
+"This is device I have right here in home and for this you need to create also lifestyle images with Google, referencing the pictures and putting the person having this kind of interaction in our AI room."
+
+Read as: "handicapped person" = osoba s invaliditetom (respectful wording on the site); "faculty" = ERF (the faculty the site is for).
