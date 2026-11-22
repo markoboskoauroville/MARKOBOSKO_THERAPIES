@@ -21,3 +21,5 @@
 **Order change (22.11.2026).** Moving a section = move the block, renumber the numeral and the kicker of every section that shifts, move the nav link; ids stay. Check no prose or script refers to the numbers (none did). The page is hand-edited, build_v4.py is stale.
 
 **myNoise wording (22.11.2026).** Never state licence terms or prices from memory or from a brief: quote only the author's public page. A screenshot of someone's site is a copy: do not publish it. Stale builder scripts keep wrong lines alive: fix the source too.
+
+**Shared VM worker (22.11.2026).** batch.json is one file for all jobs: another session replaced it while my redo waited, and my item never ran until I resubmitted after "round ends". Check `tail worker.log` for "round ends" before replacing batch.json and give each item a new name instead of moving files on Drive (Drive moves took minutes). The model cannot draw a 4 x 4 knob grid in a wide shot: ask for it only in a close top view (B).
