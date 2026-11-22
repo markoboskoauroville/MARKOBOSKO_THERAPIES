@@ -57,3 +57,9 @@ Read as: "handicapped person" = osoba s invaliditetom (respectful wording on the
 "Please on the therapist website before swaram or inspiration zero seven and before the scheme of the whole thing, before zero six and even even before zero five, you need to add this MIDI controller pan... MIDI pan."
 
 Read as: the MIDIPan section moves before the current 05 and becomes the new 05; the old 05, 06, 07 become 06, 07, 08.
+
+## 22.11.2026, Marko (verbatim, dictated), OXI E16 with myNoise, light and sound in the room
+
+"Another idea and also for visualization to connect, my noise with my MIDI controller, o x I e 16, and find another uses to control the light inside the room and sound inside the room with this controller, introduce this controller to my professors in academy... I mean, in faculty. Of course, make some lifestyle images, how different, sounds or how we call this player from the... This web page, which can be played on the... All these speakers live, can be controlled with color colored... Color coded knobs on e 16."
+
+Read as: "o x I e 16" = OXI E16 (OXI Instruments); "my noise" = myNoise (mynoise.net), already on the page; the section is an idea, nothing is connected.
