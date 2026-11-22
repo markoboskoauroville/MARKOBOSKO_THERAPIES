@@ -26,6 +26,7 @@ for k in fh:
 for name, s, lang in (('hr', hr, 'hr'), ('en', en, 'en')):
     if f'<html lang="{lang}" data-lang="{lang}">' not in s: bad.append(f'{name}: html lang/data-lang wrong')
     if 'class="langsw"' not in s or 'data-l="hr"' not in s or 'data-l="en"' not in s: bad.append(f'{name}: language switch missing')
+    if s.count('class="langsw"')!=1: bad.append(f'{name}: exactly one language switch needed, found {s.count(chr(34).join(["class=","langsw"])+chr(34))}')
     for h in ('hreflang="hr"', 'hreflang="en"', 'hreflang="x-default"'):
         if h not in s: bad.append(f'{name}: {h} missing')
 if bad:
