@@ -9,3 +9,5 @@
 **Instruments list.** data/instruments.json is Stonewhistle only (one maker); a device from another maker gets its own section, not a second list.
 
 **Score rounds.** Round 1: 6 of 10 (text section live; pictures missing, live screenshots blank, no teach step, no LESSONS, deploy rule not re-read). Round 2: after the corrections in this file; pictures still wait for Macro Recorder.
+
+**Pictures on the VM (22.11.2026, Marko: "for therapist page, use virtual machine to generate images").** Gemini worker on chromium-vm made the three MIDIPan pictures (batch-markobosko-therapies-midipan.json, results Drive `Chromium Downloads/Gemini/markobosko-therapies-midipan/`). Per-item refs worked; native size 1024x572 (no 16:9 setting: it is in the prompt); restart the worker after replacing batch.json (it sleeps an hour). Review by scp'd JPEG previews only. Not published until the master's OK. Details in the chromium-vm skill (22.11.2026 section).
