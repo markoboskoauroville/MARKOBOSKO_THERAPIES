@@ -117,3 +117,6 @@ Marko, word for word: "Please also update my page, therapies. Under the section 
 
 ## 22.11.2026 (navigation: a way back)
 Marko, word for word: "In therapy page I'm missing the navigation. There are so many links to take out user from this page, so he is lost. How to go back? Simply by clicking. Please find some way. Maybe you can open the page inside the page. I don't know. It must be the way to come back easily. I'm talking about therapy page"
+
+## 23.11.2026 (shared player: one video at a time, caption fix)
+Done in session mac1_23-11 for the showreel: `site/playlist.js` now pauses the other video when one starts (YouTube and Vimeo postMessage APIs) and the caption bug is fixed. The therapies site was redeployed. The markoboskocv copies of the player follow this file; bump the `?v=` tag when it changes. Status: done, pushed (621955d).
