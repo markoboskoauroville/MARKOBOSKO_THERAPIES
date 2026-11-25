@@ -1,9 +1,9 @@
 # TAKEOVER: Marko Bosko Therapies
 
-**What it is.** The first project of Marko Bosko's new site https://markoboskotherapies.pages.dev: an immersive therapy room. A person in a
+**What it is.** The first project of Marko Bosko's new site https://therapies.markobosko.org: an immersive therapy room. A person in a
 wheelchair sits in a room whose four walls are projected with an underwater Caribbean reef, with speakers around the room, all driven by a
 Mac Mini. One calm static page, in this order: hero picture, "The setup" picture with two plain sentences, the equipment table with
-prices, "About me" with two links (https://markobosko.pages.dev and https://djmantra.pages.dev; DJ Mantra was chosen as his sound and
+prices, "About me" with two links (https://markobosko.org and https://djmantra.markobosko.org; DJ Mantra was chosen as his sound and
 rhythm site). Project 2 (same day, momentaryupdates.md): "Soba za terapiju bojom i zvukom" with a Hemi-Sync (BrainSync) explanation, a sample player, a full-screen demo therapy mode, recommended albums, "For Brigita" (Hemi-Sync Flow store links), instruments (Stonewhistle, data/instruments.json), Marko Borić's card and two downloads. The whole site is in Croatian (Marko, 21.11.2026). Marko's request, word for word: momentaryupdates.md (21.11.2026).
 
 **Decisions.**
@@ -49,7 +49,7 @@ The repo is public and unpromoted: no README, no description.
   (4) Screen Copy v31 leaked pipe fds (~18/min) until record start failed after ~1 h: the sampler restarts it above
   1200 fds (v32 fixes it). (5) A second playback capture (scrcpy CLI) silences Screen Copy's capture: never run one.
   (6) The app cold-starts only online; once started, downloaded tracks play in airplane mode.
-- /admin (21.11.2026): "Alan Tower – javni radovi" is in `admin_pending/admin/index.html`, NOT in `site/`, because Cloudflare Zero Trust Access is not enabled on the account (API: access.api.error.not_enabled). `deploy.sh` copies it only with `ACCESS_ON=1`, after an Access app for `markoboskotherapies.pages.dev/admin*` (allow marko.bosko@auroville.community and marko.bosko@gmail.com, One-time PIN) exists. robots.txt disallows /admin; sitemap lists only `/`.
+- /admin (21.11.2026): "Alan Tower – javni radovi" is in `admin_pending/admin/index.html`, NOT in `site/`, because Cloudflare Zero Trust Access is not enabled on the account (API: access.api.error.not_enabled). `deploy.sh` copies it only with `ACCESS_ON=1`, after an Access app for `therapies.markobosko.org/admin*` (allow marko.bosko@auroville.community and marko.bosko@gmail.com, One-time PIN) exists. robots.txt disallows /admin; sitemap lists only `/`.
 
 **Project 1, new setup (21.11.2026, momentaryupdates.md).** Nothing on the floor: 4 Optoma UST lasers upside down on OWM3000 ceiling
 mounts, 8 Adam Audio D3V (4 pairs, 3/8" thread) upside down on iriz CM550 ceiling mounts, each pair over Lindy USB-over-Cat6 to the
